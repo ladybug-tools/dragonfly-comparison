@@ -1,0 +1,246 @@
+# coding=utf-8
+"""Room2D Comparison Properties."""
+from ladybug_geometry.geometry3d import Point3D, Vector3D, Plane, Face3D
+from dragonfly.windowparameter import _WindowParameterBase
+from dragonfly.skylightparameter import _SkylightParameterBase
+import dragonfly.windowparameter as glzpar
+import dragonfly.skylightparameter as skypar
+
+
+class Room2DComparisonProperties(object):
+    """Comparison Properties for Dragonfly Room2D.
+
+    Args:
+        host: A dragonfly_core Room2D object that hosts these properties.
+        comparison_floor_geometry: A single horizontal Face3D representing the
+            floor plate of the Room2D to which the host Room2D is being
+            compared. (Default: None).
+        comparison_windows: A list of WindowParameter objects that dictate the
+            window geometries of the Room2D to which the host Room2D is being
+            compared. (Default: None).
+        comparison_skylight: A SkylightParameters object that dictate the
+            skylight geometries of the Room2D to which the host Room2D is being
+            compared. (Default: None).
+
+    Properties:
+        * host
+        * comparison_floor_geometry
+        * comparison_windows
+        * comparison_skylight
+        * comparison_floor_area
+        * floor_area_difference
+        * floor_area_percent_change
+        * comparison_wall_sub_face_area
+        * wall_sub_face_area_difference
+        * wall_sub_face_area_percent_change
+        * comparison_roof_sub_face_area
+        * roof_sub_face_area_difference
+        * roof_sub_face_area_percent_change
+        * comparison_sub_face_area
+        * sub_face_area_difference
+        * sub_face_area_percent_change
+    """
+    __slots__ = ('_host', '_comparison_floor_geometry', '_comparison_windows',
+                 '_comparison_skylight')
+
+    def __init__(self, host, comparison_floor_geometry=None, comparison_windows=None,
+                 comparison_skylight=None):
+        """Initialize Room2D Comparison properties."""
+        self._host = host
+        self.comparison_floor_geometry = comparison_floor_geometry
+        self.comparison_windows = comparison_windows
+        self.comparison_skylight = comparison_skylight
+
+    @property
+    def host(self):
+        """Get the Room2D object hosting these properties."""
+        return self._host
+
+    @property
+    def comparison_floor_geometry(self):
+        """Get or set a horizontal Face3D for the Room2D to which the host is compared.
+
+        If not set, all properties relating to floor geometry comparison will
+        be zero (aka. unchanged).
+        """
+        return self._comparison_floor_geometry
+
+    @comparison_floor_geometry.setter
+    def comparison_floor_geometry(self, value):
+        if value is not None:
+            # process the floor_geometry
+            assert isinstance(value, Face3D), \
+                'Expected ladybug_geometry Face3D. Got {}'.format(type(value))
+            if value.normal.z < 0:  # ensure upward-facing Face3D
+                value = value.flip()
+            # ensure a global 2D origin, which helps in solve adjacency and the dict schema
+            o_pl = Plane(Vector3D(0, 0, 1), Point3D(0, 0, value.plane.o.z))
+            value = Face3D(value.boundary, o_pl, value.holes)
+        self._comparison_floor_geometry = value
+
+    @property
+    def comparison_windows(self):
+        """Get or set a tuple of WindowParameters describing how to generate windows.
+
+        If not set, all properties relating to wall sub-face geometry comparison
+        will be zero (aka. unchanged).
+        """
+        return tuple(self._comparison_windows)
+
+    @comparison_windows.setter
+    def comparison_windows(self, value):
+        if value is not None:
+            if not isinstance(value, tuple):
+                value = tuple(value)
+            for val in value:
+                if val is not None:
+                    assert isinstance(val, _WindowParameterBase), \
+                        'Expected Window Parameters. Got {}'.format(type(value))
+        self._comparison_windows = value
+
+    @property
+    def comparison_skylight(self):
+        """Get or set SkylightParameters describing how to generate skylights.
+
+        If not set, all properties relating to roof sub-face geometry comparison
+        will be zero (aka. unchanged).
+        """
+        return self._comparison_skylight
+
+    @comparison_skylight.setter
+    def comparison_skylight(self, value):
+        if value is not None:
+            assert isinstance(value, _SkylightParameterBase), \
+                'Expected Skylight Parameters. Got {}'.format(type(value))
+        self._comparison_skylight = value
+
+    def set_from_room_2d(self, comparison_room_2d):
+        """Set the attributes of this Room2DComparisonProperties using a Room2D.
+
+        Args:
+            comparison_room_2d: A Room2D to which the host Room2D is being compared.
+        """
+        self.comparison_floor_geometry = comparison_room_2d.floor_geometry
+        self.comparison_windows = comparison_room_2d.window_parameters
+        self.comparison_skylight = comparison_room_2d.skylight_parameters
+
+    @classmethod
+    def from_dict(cls, data, host):
+        """Create Room2DComparisonProperties from a dictionary.
+
+        Args:
+            data: A dictionary representation of Room2DComparisonProperties in the
+                format below.
+            host: A Room2D object that hosts these properties.
+
+        .. code-block:: python
+
+            {
+            "type": 'Room2DComparisonProperties',
+            "modifier_set": {},  # A ModifierSet dictionary
+            "grid_parameters": []  # A list of GridParameter dictionaries
+            }
+        """
+        assert data['type'] == 'Room2DComparisonProperties', \
+            'Expected Room2DComparisonProperties. Got {}.'.format(data['type'])
+        new_prop = cls(host)
+        new_prop.apply_properties_from_dict(data)
+        return new_prop
+
+    def apply_properties_from_dict(self, data):
+        """Apply properties from a Room2DComparisonProperties dictionary.
+
+        Args:
+            data: A Room2DComparisonProperties dict (typically coming from a Model).
+        """
+        # re-assemble the floor_geometry
+        if 'floor_boundary' in data and data['floor_boundary'] is not None:
+            fh = data['floor_height'] \
+                if 'floor_height' in data and data['floor_height'] is not None else 0
+            bound_verts = [Point3D(pt[0], pt[1], fh) for pt in data['floor_boundary']]
+            if 'floor_holes' in data:
+                hole_verts = [[Point3D(pt[0], pt[1], fh)
+                               for pt in hole] for hole in data['floor_holes']]
+            else:
+                hole_verts = None
+            self.comparison_floor_geometry = Face3D(bound_verts, None, hole_verts)
+
+        # re-assemble window parameters
+        if 'window_parameters' in data and data['window_parameters'] is not None:
+            glz_pars = []
+            for i, glz_dict in enumerate(data['window_parameters']):
+                if glz_dict is not None:
+                    try:
+                        glz_class = getattr(glzpar, glz_dict['type'])
+                    except AttributeError:
+                        raise ValueError(
+                            'Window parameter "{}" is not recognized.'.format(
+                                glz_dict['type']))
+                    glz_pars.append(glz_class.from_dict(glz_dict))
+                else:
+                    glz_pars.append(None)
+            self.comparison_windows = glz_pars
+
+        # assign any skylight parameters if they are specified
+        if 'skylight_parameters' in data and data['skylight_parameters'] is not None:
+            try:
+                sky_class = getattr(skypar, data['skylight_parameters']['type'])
+            except AttributeError:
+                raise ValueError(
+                    'Skylight parameter "{}" is not recognized.'.format(
+                        data['skylight_parameters']['type']))
+            self.comparison_skylight = sky_class.from_dict(data['skylight_parameters'])
+
+    def to_dict(self, abridged=False):
+        """Return Room2D comparison properties as a dictionary.
+
+        Args:
+            abridged: Boolean for whether the full dictionary of the Room2D should
+                be written (False) or just the identifier of the the individual
+                properties (True). Default: False.
+        """
+        base = {'comparison': {}}
+        base['comparison']['type'] = 'Room2DComparisonProperties'
+
+        # write the floor geometry into the dictionary
+        if self.comparison_floor_geometry is not None:
+            base['comparison']['floor_boundary'] = \
+                [(p.x, p.y) for p in self.comparison_floor_geometry.boundary]
+            if self.comparison_floor_geometry.has_holes:
+                base['comparison']['floor_holes'] = \
+                    [[(p.x, p.y) for p in hole]
+                     for hole in self.comparison_floor_geometry.holes]
+            base['comparison']['floor_height'] = self.comparison_floor_geometry[0].z
+
+        # write the window parameters into the dictionary
+        if self.comparison_windows is not None:
+            base['comparison']['window_parameters'] = []
+            for glz in self.comparison_windows:
+                val = glz.to_dict() if glz is not None else None
+                base['comparison']['window_parameters'].append(val)
+
+        # write the skylights into the dict
+        if self.comparison_skylight is not None:
+            base['comparison']['skylight_parameters'] = \
+                self.comparison_skylight.to_dict()
+        return base
+
+    def duplicate(self, new_host=None):
+        """Get a copy of this object.
+
+        Args:
+            new_host: A new Room2D object that hosts these properties.
+                If None, the properties will be duplicated with the same host.
+        """
+        _host = new_host or self._host
+        new_r = Room2DComparisonProperties(_host, self._comparison_floor_geometry)
+        new_r._comparison_windows = self._comparison_windows[:]
+        new_r._comparison_skylight = self._comparison_skylight.duplicate() \
+            if self._comparison_skylight is not None else None
+        return new_r
+
+    def ToString(self):
+        return self.__repr__()
+
+    def __repr__(self):
+        return 'Room2D Comparison Properties: {}'.format(self.host.identifier)
