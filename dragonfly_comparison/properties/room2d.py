@@ -432,9 +432,8 @@ class Room2DComparisonProperties(object):
         """
         _host = new_host or self._host
         new_r = Room2DComparisonProperties(_host, self._comparison_floor_geometry)
-        new_r._comparison_windows = self._comparison_windows[:]
-        new_r._comparison_skylight = self._comparison_skylight.duplicate() \
-            if self._comparison_skylight is not None else None
+        new_r._comparison_windows = self._comparison_windows
+        new_r._comparison_skylight = self._comparison_skylight
         return new_r
 
     def ToString(self):
