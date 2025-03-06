@@ -355,12 +355,11 @@ class Room2DComparisonProperties(object):
         """
         # re-assemble the floor_geometry
         if 'floor_boundary' in data and data['floor_boundary'] is not None:
-            fh = data['floor_height'] \
-                if 'floor_height' in data and data['floor_height'] is not None else 0
+            fh = self.host.floor_height
             bound_verts = [Point3D(pt[0], pt[1], fh) for pt in data['floor_boundary']]
             if 'floor_holes' in data:
-                hole_verts = [[Point3D(pt[0], pt[1], fh)
-                               for pt in hole] for hole in data['floor_holes']]
+                hole_verts = [[Point3D(pt[0], pt[1], fh) for pt in hole]
+                              for hole in data['floor_holes']]
             else:
                 hole_verts = None
             self.comparison_floor_geometry = Face3D(bound_verts, None, hole_verts)
@@ -410,7 +409,6 @@ class Room2DComparisonProperties(object):
                 base['comparison']['floor_holes'] = \
                     [[(p.x, p.y) for p in hole]
                      for hole in self.comparison_floor_geometry.holes]
-            base['comparison']['floor_height'] = self.comparison_floor_geometry[0].z
 
         # write the window parameters into the dictionary
         if self.comparison_windows is not None:
