@@ -272,6 +272,42 @@ class Room2DComparisonProperties(object):
         self.comparison_windows = self.host.window_parameters
         self.comparison_skylight = self.host.skylight_parameters
 
+    def restore(self):
+        """Get a Room2D with host properties and geometry restored from the comparison.
+
+        The restored Room2D returned from this method will have all boundary
+        conditions reset to outdoors and all shading parameters removed. Otherwise,
+        all properties of the returned Room2D will match the host and all geometry
+        will match the comparison.
+        """
+        # grab the relevant properties from the host Room2D
+        room_2d_class = self.host.__class__
+        identifier = self.host.identifier
+        floor_geo = self.comparison_floor_geometry \
+            if self.comparison_floor_geometry is not None else self.host.floor_geometry
+        ftc = self.host.floor_to_ceiling_height
+        w_par = self.comparison_windows \
+            if self.comparison_windows is not None else self.host.window_parameters
+        ground = self.host.is_ground_contact
+        exposed = self.host.is_top_exposed
+        new_room = room_2d_class(identifier, floor_geo, ftc, window_parameters=w_par,
+                                 is_ground_contact=ground, is_top_exposed=exposed)
+
+        # assign any additional properties to the new room
+        if self.comparison_skylight is not None:
+            new_room._skylight_parameters = self.comparison_skylight
+        new_room._has_floor = self.host._has_floor
+        new_room._has_ceiling = self.host._has_ceiling
+        new_room._ceiling_plenum_depth = self.host._ceiling_plenum_depth
+        new_room._floor_plenum_depth = self.host._floor_plenum_depth
+        new_room._user_data = None if self.host.user_data is None else \
+            self.host.user_data.copy()
+        new_room._parent = self.host._parent
+        new_room._abridged_properties = self.host._abridged_properties
+        new_room._properties._duplicate_extension_attr(self.host._properties)
+
+        return new_room
+
     def move(self, moving_vec):
         """Move these properties along a vector.
 
