@@ -1,8 +1,10 @@
 # coding=utf-8
 """Room2D Comparison Properties."""
+import math
+
 from ladybug_geometry.geometry3d import Point3D, Vector3D, Plane, Face3D
 from dragonfly.windowparameter import _WindowParameterBase
-from dragonfly.skylightparameter import _SkylightParameterBase
+from dragonfly.skylightparameter import _SkylightParameterBase, DetailedSkylights
 import dragonfly.windowparameter as glzpar
 import dragonfly.skylightparameter as skypar
 
@@ -269,6 +271,58 @@ class Room2DComparisonProperties(object):
         self.comparison_floor_geometry = self.host.floor_geometry
         self.comparison_windows = self.host.window_parameters
         self.comparison_skylight = self.host.skylight_parameters
+
+    def move(self, moving_vec):
+        """Move these properties along a vector.
+
+        Args:
+            moving_vec: A ladybug_geometry Vector3D with the direction and distance
+                to move the room.
+        """
+        if self.comparison_floor_geometry is not None:
+            self.comparison_floor_geometry = \
+                self.comparison_floor_geometry.move(moving_vec)
+        if isinstance(self.comparison_skylight, DetailedSkylights):
+            self.comparison_skylight = self.comparison_skylight.move(moving_vec)
+
+    def rotate_xy(self, angle, origin):
+        """Rotate these properties counterclockwise in the XY plane by a certain angle.
+
+        Args:
+            angle: An angle in degrees.
+            origin: A ladybug_geometry Point3D for the origin around which the
+                object will be rotated.
+        """
+        if self.comparison_floor_geometry is not None:
+            self.comparison_floor_geometry = \
+                self.comparison_floor_geometry.rotate_xy(math.radians(angle), origin)
+        if isinstance(self.comparison_skylight, DetailedSkylights):
+            self.comparison_skylight = self.comparison_skylight.rotate(angle, origin)
+
+    def scale(self, factor, origin=None):
+        """Scale these properties by a factor from an origin point.
+
+        Args:
+            factor: A number representing how much the object should be scaled.
+            origin: A ladybug_geometry Point3D representing the origin from which
+                to scale. If None, it will be scaled from the World origin (0, 0, 0).
+        """
+        # scale the floor geometry
+        if self.comparison_floor_geometry is not None:
+            self.comparison_floor_geometry = \
+                self.comparison_floor_geometry.scale(factor, origin)
+        # scale the window parameters
+        if self.comparison_windows is not None:
+            scaled_windows = []
+            for win_par in self.comparison_windows:
+                s_wp = win_par.scale(factor) if win_par is not None else None
+                scaled_windows.append(s_wp)
+            self.comparison_windows = tuple(scaled_windows)
+        # scale the skylight parameters
+        if self.comparison_skylight is not None:
+            self.comparison_skylight = self.comparison_skylight.scale(factor, origin) \
+                if isinstance(self.comparison_skylight, DetailedSkylights) else \
+                self.comparison_skylight.scale(factor)
 
     @classmethod
     def from_dict(cls, data, host):

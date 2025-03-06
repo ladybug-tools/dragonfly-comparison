@@ -2,10 +2,10 @@
 import pytest
 
 from ladybug_geometry.geometry2d import Point2D
-from ladybug_geometry.geometry3d import Point3D, Face3D
+from ladybug_geometry.geometry3d import Vector3D, Point3D, Plane, Face3D
 from honeybee.boundarycondition import boundary_conditions as bcs
 from dragonfly.room2d import Room2D
-from dragonfly.windowparameter import SimpleWindowRatio
+from dragonfly.windowparameter import SimpleWindowRatio, SingleWindow
 from dragonfly.shadingparameter import Overhang
 from dragonfly.skylightparameter import GriddedSkylightRatio
 
@@ -93,6 +93,81 @@ def test_duplicate():
     room_dup_1.snap_to_points(snap_points, 1.0)
     assert room_original.properties.comparison.floor_area_difference != \
         room_dup_1.properties.comparison.floor_area_difference
+
+
+def test_move():
+    """Test the Room2D move method."""
+    pts_1 = (Point3D(0, 2, 0), Point3D(2, 2, 0), Point3D(2, 0, 0), Point3D(0, 0, 0))
+    plane_1 = Plane(Vector3D(0, 0, 1), Point3D(0, 0, 0))
+    room = Room2D('SquareShoebox', Face3D(pts_1, plane_1), 3)
+    room.properties.comparison.reset()
+
+    vec_1 = Vector3D(2, 2, 2)
+    room.move(vec_1)
+    assert room.properties.comparison.comparison_floor_geometry[0] == Point3D(2, 2, 2)
+    assert room.properties.comparison.comparison_floor_geometry[1] == Point3D(4, 2, 2)
+    assert room.properties.comparison.comparison_floor_geometry[2] == Point3D(4, 4, 2)
+    assert room.properties.comparison.comparison_floor_geometry[3] == Point3D(2, 4, 2)
+    assert room.properties.comparison.floor_area == room.floor_area
+
+
+def test_scale():
+    """Test the Room2D scale method."""
+    pts = (Point3D(1, 1, 2), Point3D(2, 1, 2), Point3D(2, 2, 2), Point3D(1, 2, 2))
+    plane_1 = Plane(Vector3D(0, 0, 1), Point3D(0, 0, 0))
+    room = Room2D('SquareShoebox', Face3D(pts, plane_1), 3)
+    room.set_outdoor_window_parameters(SingleWindow(1, 1, 1))
+    room.properties.comparison.reset()
+    base_room = room.duplicate()
+
+    room.scale(2)
+    assert room.properties.comparison.comparison_floor_geometry[0] == Point3D(2, 2, 4)
+    assert room.properties.comparison.comparison_floor_geometry[1] == Point3D(4, 2, 4)
+    assert room.properties.comparison.comparison_floor_geometry[2] == Point3D(4, 4, 4)
+    assert room.properties.comparison.comparison_floor_geometry[3] == Point3D(2, 4, 4)
+    assert room.properties.comparison.floor_area == base_room.floor_area * 2 ** 2
+    assert room.properties.comparison.comparison_windows[0].width == 2
+    assert room.properties.comparison.comparison_windows[0].height == 2
+    assert room.properties.comparison.comparison_windows[0].sill_height == 2
+
+
+def test_rotate_xy():
+    """Test the Room2D rotate_xy method."""
+    pts = (Point3D(1, 1, 2), Point3D(2, 1, 2), Point3D(2, 2, 2), Point3D(1, 2, 2))
+    plane = Plane(Vector3D(0, 0, 1), Point3D(0, 0, 2))
+    room = Room2D('SquareShoebox', Face3D(pts, plane), 3)
+    room.properties.comparison.reset()
+    origin_1 = Point3D(1, 1, 0)
+
+    test_1 = room.duplicate()
+    test_1.rotate_xy(180, origin_1)
+    assert test_1.properties.comparison.comparison_floor_geometry[0].x == \
+        pytest.approx(1, rel=1e-3)
+    assert test_1.properties.comparison.comparison_floor_geometry[0].y == \
+        pytest.approx(1, rel=1e-3)
+    assert test_1.properties.comparison.comparison_floor_geometry[0].z == \
+        pytest.approx(2, rel=1e-3)
+    assert test_1.properties.comparison.comparison_floor_geometry[2].x == \
+        pytest.approx(0, rel=1e-3)
+    assert test_1.properties.comparison.comparison_floor_geometry[2].y == \
+        pytest.approx(0, rel=1e-3)
+    assert test_1.properties.comparison.comparison_floor_geometry[2].z == \
+        pytest.approx(2, rel=1e-3)
+
+    test_2 = room.duplicate()
+    test_2.rotate_xy(90, origin_1)
+    assert test_2.properties.comparison.comparison_floor_geometry[0].x == \
+        pytest.approx(1, rel=1e-3)
+    assert test_2.properties.comparison.comparison_floor_geometry[0].y == \
+        pytest.approx(1, rel=1e-3)
+    assert test_2.properties.comparison.comparison_floor_geometry[0].z == \
+        pytest.approx(2, rel=1e-3)
+    assert test_2.properties.comparison.comparison_floor_geometry[2].x == \
+        pytest.approx(0, rel=1e-3)
+    assert test_2.properties.comparison.comparison_floor_geometry[2].y == \
+        pytest.approx(2, rel=1e-3)
+    assert test_2.properties.comparison.comparison_floor_geometry[2].z == \
+        pytest.approx(2, rel=1e-3)
 
 
 def test_to_dict():
