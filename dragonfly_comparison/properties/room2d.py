@@ -27,17 +27,21 @@ class Room2DComparisonProperties(object):
         * comparison_floor_geometry
         * comparison_windows
         * comparison_skylight
-        * comparison_floor_area
+        * floor_area
         * floor_area_difference
+        * floor_area_abs_difference
         * floor_area_percent_change
-        * comparison_wall_sub_face_area
+        * wall_sub_face_area
         * wall_sub_face_area_difference
+        * wall_sub_face_area_abs_difference
         * wall_sub_face_area_percent_change
-        * comparison_roof_sub_face_area
+        * roof_sub_face_area
         * roof_sub_face_area_difference
+        * roof_sub_face_area_abs_difference
         * roof_sub_face_area_percent_change
-        * comparison_sub_face_area
+        * sub_face_area
         * sub_face_area_difference
+        * sub_face_area_abs_difference
         * sub_face_area_percent_change
     """
     __slots__ = ('_host', '_comparison_floor_geometry', '_comparison_windows',
@@ -85,7 +89,7 @@ class Room2DComparisonProperties(object):
         If not set, all properties relating to wall sub-face geometry comparison
         will be zero (aka. unchanged).
         """
-        return tuple(self._comparison_windows)
+        return self._comparison_windows
 
     @comparison_windows.setter
     def comparison_windows(self, value):
@@ -114,6 +118,142 @@ class Room2DComparisonProperties(object):
                 'Expected Skylight Parameters. Got {}'.format(type(value))
         self._comparison_skylight = value
 
+    @property
+    def floor_segments(self):
+        """Get a list of LineSegment3D objects for each wall of the comparison Room."""
+        fg = self.comparison_floor_geometry
+        if fg is None:
+            return None
+        return fg.boundary_segments if fg.holes is None else \
+            fg.boundary_segments + tuple(s for hole in fg.hole_segments for s in hole)
+
+    @property
+    def floor_area(self):
+        """Get a number for the floor area of the Room2D to which the host is compared.
+        """
+        if self.comparison_floor_geometry is None:
+            return self.host.floor_area
+        return self.comparison_floor_geometry.area
+
+    @property
+    def floor_area_difference(self):
+        """Get a number for the difference between the host and comparison floor area.
+
+        This number will be positive if the floor area increased in the host room
+        compared to the comparison room and negative if it decreased.
+        """
+        return self.host.floor_area - self.floor_area
+
+    @property
+    def floor_area_abs_difference(self):
+        """Get a number for the difference between the host and comparison floor area.
+        """
+        return abs(self.floor_area_difference)
+
+    @property
+    def floor_area_percent_change(self):
+        """Get a number between 0 an 100 for the percent change between floor areas.
+        """
+        return (self.floor_area_abs_difference / self.floor_area) * 100
+
+    @property
+    def wall_sub_face_area(self):
+        """Get a number for the wall sub-face area of the comparison Room2D.
+
+        This includes both Apertures and Doors.
+        """
+        if self.comparison_windows is None or self.comparison_floor_geometry is None:
+            return self.host.wall_sub_face_area
+        glz_areas = []
+        for seg, glz in zip(self.floor_segments, self.comparison_windows):
+            if glz is not None:
+                area = glz.area_from_segment(seg, self.host.floor_to_ceiling_height)
+                glz_areas.append(area)
+        return sum(glz_areas)
+
+    @property
+    def wall_sub_face_area_difference(self):
+        """Get a number for the difference between host and comparison wall sub-face area.
+
+        This number will be positive if the sub-face area increased in the host room
+        compared to the comparison room and negative if it decreased.
+        """
+        return self.host.wall_sub_face_area - self.wall_sub_face_area
+
+    @property
+    def wall_sub_face_area_abs_difference(self):
+        """Get a number for the difference between host and comparison wall sub-face area.
+        """
+        return abs(self.wall_sub_face_area_difference)
+
+    @property
+    def wall_sub_face_area_percent_change(self):
+        """Get a number between 0 an 100 for the percent change between wall sub-face areas.
+        """
+        return (self.wall_sub_face_area_abs_difference / self.wall_sub_face_area) * 100
+
+    @property
+    def roof_sub_face_area(self):
+        """Get a the total sub-face area of the comparison Room's roofs.
+
+        This includes both Apertures and overhead Doors.
+        """
+        if self.host.is_top_exposed and self.comparison_skylight is not None and \
+                self.comparison_floor_geometry is not None:
+            sky_par = self.comparison_skylight
+            return sky_par.area_from_face(self.comparison_floor_geometry)
+        return self.host.roof_sub_face_area
+
+    @property
+    def roof_sub_face_area_difference(self):
+        """Get a number for the difference between host and comparison roof sub-face area.
+
+        This number will be positive if the sub-face area increased in the host room
+        compared to the comparison room and negative if it decreased.
+        """
+        return self.host.roof_sub_face_area - self.roof_sub_face_area
+
+    @property
+    def roof_sub_face_area_abs_difference(self):
+        """Get a number for the difference between host and comparison roof sub-face area.
+        """
+        return abs(self.roof_sub_face_area_difference)
+
+    @property
+    def roof_sub_face_area_percent_change(self):
+        """Get a number between 0 an 100 for the percent change between roof sub-face areas.
+        """
+        return (self.roof_sub_face_area_abs_difference / self.roof_sub_face_area) * 100
+
+    @property
+    def sub_face_area(self):
+        """Get a the total sub-face area of the comparison Room.
+
+        This includes both Apertures and overhead Doors.
+        """
+        return self.wall_sub_face_area + self.roof_sub_face_area
+
+    @property
+    def sub_face_area_difference(self):
+        """Get a number for the difference between host and comparison sub-face area.
+
+        This number will be positive if the sub-face area increased in the host room
+        compared to the comparison room and negative if it decreased.
+        """
+        return self.wall_sub_face_area_difference + self.roof_sub_face_area_difference
+
+    @property
+    def sub_face_area_abs_difference(self):
+        """Get a number for the difference between host and comparison sub-face area.
+        """
+        return abs(self.sub_face_area_difference)
+
+    @property
+    def sub_face_area_percent_change(self):
+        """Get a number between 0 an 100 for the percent change between sub-face areas.
+        """
+        return (self.sub_face_area_abs_difference / self.sub_face_area) * 100
+
     def set_from_room_2d(self, comparison_room_2d):
         """Set the attributes of this Room2DComparisonProperties using a Room2D.
 
@@ -123,6 +263,12 @@ class Room2DComparisonProperties(object):
         self.comparison_floor_geometry = comparison_room_2d.floor_geometry
         self.comparison_windows = comparison_room_2d.window_parameters
         self.comparison_skylight = comparison_room_2d.skylight_parameters
+
+    def reset(self):
+        """Reset the comparison attributes using the host Room2D."""
+        self.comparison_floor_geometry = self.host.floor_geometry
+        self.comparison_windows = self.host.window_parameters
+        self.comparison_skylight = self.host.skylight_parameters
 
     @classmethod
     def from_dict(cls, data, host):
@@ -168,7 +314,7 @@ class Room2DComparisonProperties(object):
         # re-assemble window parameters
         if 'window_parameters' in data and data['window_parameters'] is not None:
             glz_pars = []
-            for i, glz_dict in enumerate(data['window_parameters']):
+            for glz_dict in data['window_parameters']:
                 if glz_dict is not None:
                     try:
                         glz_class = getattr(glzpar, glz_dict['type'])
