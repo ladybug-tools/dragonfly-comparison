@@ -312,7 +312,7 @@ def create_cli_files():
 
 
 def get_cli_data(project_folder):
-    """Retrieve CLI data found inside a specified respository.
+    """Retrieve CLI data found inside a specified repository.
 
     Args:
         project_folder: the documentation path that contains the files to
@@ -355,7 +355,7 @@ def get_cli_data(project_folder):
         return None
 
     cli_path = os.path.join(lib_path, 'cli')
-    if not os.path.isdir(lib_path):
+    if not os.path.isdir(cli_path):
         print("[CLI data]: No CLI library found")
         return None
 
