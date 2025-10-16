@@ -1,0 +1,19 @@
+dragonfly\_comparison.properties package
+========================================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   dragonfly_comparison.properties.model
+   dragonfly_comparison.properties.room2d
+
+Module contents
+---------------
+
+.. automodule:: dragonfly_comparison.properties
+   :members:
+   :undoc-members:
+   :show-inheritance:
