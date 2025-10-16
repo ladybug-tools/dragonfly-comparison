@@ -156,7 +156,10 @@ class Room2DComparisonProperties(object):
     def floor_area_percent_change(self):
         """Get a number between 0 an 100 for the percent change between floor areas.
         """
-        return (self.floor_area_abs_difference / self.floor_area) * 100
+        try:
+            return (self.floor_area_abs_difference / self.floor_area) * 100
+        except ZeroDivisionError:
+            return 0
 
     @property
     def wall_sub_face_area(self):
@@ -192,7 +195,10 @@ class Room2DComparisonProperties(object):
     def wall_sub_face_area_percent_change(self):
         """Get a number between 0 an 100 for the percent change between wall sub-face areas.
         """
-        return (self.wall_sub_face_area_abs_difference / self.wall_sub_face_area) * 100
+        try:
+            return (self.wall_sub_face_area_abs_difference / self.wall_sub_face_area) * 100
+        except ZeroDivisionError:
+            return 0
 
     @property
     def roof_sub_face_area(self):
@@ -225,7 +231,10 @@ class Room2DComparisonProperties(object):
     def roof_sub_face_area_percent_change(self):
         """Get a number between 0 an 100 for the percent change between roof sub-face areas.
         """
-        return (self.roof_sub_face_area_abs_difference / self.roof_sub_face_area) * 100
+        try:
+            return (self.roof_sub_face_area_abs_difference / self.roof_sub_face_area) * 100
+        except ZeroDivisionError:
+            return 0
 
     @property
     def sub_face_area(self):
@@ -254,7 +263,10 @@ class Room2DComparisonProperties(object):
     def sub_face_area_percent_change(self):
         """Get a number between 0 an 100 for the percent change between sub-face areas.
         """
-        return (self.sub_face_area_abs_difference / self.sub_face_area) * 100
+        try:
+            return (self.sub_face_area_abs_difference / self.sub_face_area) * 100
+        except ZeroDivisionError:
+            return 0
 
     def set_from_room_2d(self, comparison_room_2d):
         """Set the attributes of this Room2DComparisonProperties using a Room2D.
