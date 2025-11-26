@@ -3,7 +3,7 @@
 import math
 
 from ladybug_geometry.geometry3d import Point3D, Vector3D, Plane, Face3D
-from dragonfly.windowparameter import _WindowParameterBase
+from dragonfly.windowparameter import _WindowParameterBase, _AsymmetricBase
 from dragonfly.skylightparameter import _SkylightParameterBase, DetailedSkylights
 import dragonfly.windowparameter as glzpar
 import dragonfly.skylightparameter as skypar
@@ -33,6 +33,10 @@ class Room2DComparisonProperties(object):
         * floor_area_difference
         * floor_area_abs_difference
         * floor_area_percent_change
+        * wall_area
+        * wall_area_difference
+        * wall_area_abs_difference
+        * wall_area_percent_change
         * wall_sub_face_area
         * wall_sub_face_area_difference
         * wall_sub_face_area_abs_difference
@@ -45,6 +49,14 @@ class Room2DComparisonProperties(object):
         * sub_face_area_difference
         * sub_face_area_abs_difference
         * sub_face_area_percent_change
+        * window_area
+        * window_area_difference
+        * window_area_abs_difference
+        * window_area_percent_change
+        * door_area
+        * door_area_difference
+        * door_area_abs_difference
+        * door_area_percent_change
     """
     __slots__ = ('_host', '_comparison_floor_geometry', '_comparison_windows',
                  '_comparison_skylight')
@@ -162,6 +174,42 @@ class Room2DComparisonProperties(object):
             return 0
 
     @property
+    def wall_area(self):
+        """Get a number for the wall area of the Room2D to which the host is compared.
+        """
+        segs = self.host.floor_segments if self.comparison_floor_geometry is None \
+            else self.floor_segments
+        ftc = self.host.floor_to_ceiling_height
+        return sum(seg.length * ftc for seg in segs)
+
+    @property
+    def wall_area_difference(self):
+        """Get a number for the difference between the host and comparison wall area.
+
+        This number will be positive if the wall area increased in the host room
+        compared to the comparison room and negative if it decreased.
+        """
+        segs = self.host.floor_segments
+        ftc = self.host.floor_to_ceiling_height
+        host_floor_area = sum(seg.length * ftc for seg in segs)
+        return host_floor_area - self.wall_area
+
+    @property
+    def wall_area_abs_difference(self):
+        """Get a number for the difference between the host and comparison wall area.
+        """
+        return abs(self.wall_area_difference)
+
+    @property
+    def wall_area_percent_change(self):
+        """Get a number between 0 an 100 for the percent change between wall areas.
+        """
+        try:
+            return (self.wall_area_abs_difference / self.wall_area) * 100
+        except ZeroDivisionError:
+            return 0
+
+    @property
     def wall_sub_face_area(self):
         """Get a number for the wall sub-face area of the comparison Room2D.
 
@@ -265,6 +313,157 @@ class Room2DComparisonProperties(object):
         """
         try:
             return (self.sub_face_area_abs_difference / self.sub_face_area) * 100
+        except ZeroDivisionError:
+            return 0
+
+    @property
+    def window_area(self):
+        """Get a number for the window area of the comparison Room2D.
+
+        This includes both windows in walls and roofs.
+        """
+        # compute the window area
+        if self.comparison_windows is None or self.comparison_floor_geometry is None:
+            segs, win_pars = self.host.floor_segments, self.host.window_parameters
+        else:
+            segs, win_pars = self.floor_segments, self.comparison_windows
+        glz_areas = []
+        for seg, glz in zip(segs, win_pars):
+            if isinstance(glz, _AsymmetricBase):
+                glz = glz.remove_doors()
+            if glz is not None:
+                area = glz.area_from_segment(seg, self.host.floor_to_ceiling_height)
+                glz_areas.append(area)
+        # compute the skylight area
+        if self.host.is_top_exposed:
+            if self.comparison_skylight is not None and \
+                    self.comparison_floor_geometry is not None:
+                sky_par = self.comparison_skylight
+                if isinstance(sky_par, DetailedSkylights):
+                    sky_par = sky_par.remove_doors()
+                if sky_par is not None:
+                    glz_areas.append(sky_par.area_from_face(self.comparison_floor_geometry))
+            else:
+                sky_par = self.host.skylight_parameters
+                if isinstance(sky_par, DetailedSkylights):
+                    sky_par = sky_par.remove_doors()
+                if sky_par is not None:
+                    glz_areas.append(sky_par.area_from_face(self.host.floor_geometry))
+        return sum(glz_areas)
+
+    @property
+    def window_area_difference(self):
+        """Get a number for the difference between host and comparison window area.
+
+        This number will be positive if the window area increased in the host room
+        compared to the comparison room and negative if it decreased.
+        """
+        # compute the window area
+        segs, win_pars = self.host.floor_segments, self.host.window_parameters
+        glz_areas = []
+        for seg, glz in zip(segs, win_pars):
+            if isinstance(glz, _AsymmetricBase):
+                glz = glz.remove_doors()
+            if glz is not None:
+                area = glz.area_from_segment(seg, self.host.floor_to_ceiling_height)
+                glz_areas.append(area)
+        # compute the skylight area
+        if self.host.is_top_exposed:
+            sky_par = self.host.skylight_parameters
+            if isinstance(sky_par, DetailedSkylights):
+                sky_par = sky_par.remove_doors()
+            if sky_par is not None:
+                glz_areas.append(sky_par.area_from_face(self.host.floor_geometry))
+        return sum(glz_areas) - self.window_area
+
+    @property
+    def window_area_abs_difference(self):
+        """Get a number for the difference between host and comparison window area.
+        """
+        return abs(self.window_area_difference)
+
+    @property
+    def window_area_percent_change(self):
+        """Get a number between 0 an 100 for the percent change between window areas.
+        """
+        try:
+            return (self.window_area_abs_difference / self.window_area) * 100
+        except ZeroDivisionError:
+            return 0
+
+    @property
+    def door_area(self):
+        """Get a number for the door area of the comparison Room2D.
+
+        This includes both doors in walls and roofs.
+        """
+        # compute the window area
+        if self.comparison_windows is None or self.comparison_floor_geometry is None:
+            segs, win_pars = self.host.floor_segments, self.host.window_parameters
+        else:
+            segs, win_pars = self.floor_segments, self.comparison_windows
+        glz_areas = []
+        for seg, glz in zip(segs, win_pars):
+            if isinstance(glz, _AsymmetricBase):
+                glz = glz.remove_windows()
+                if glz is not None:
+                    area = glz.area_from_segment(seg, self.host.floor_to_ceiling_height)
+                    glz_areas.append(area)
+        # compute the skylight area
+        if self.host.is_top_exposed:
+            if self.comparison_skylight is not None and \
+                    self.comparison_floor_geometry is not None:
+                sky_par = self.comparison_skylight
+                if isinstance(sky_par, DetailedSkylights):
+                    sky_par = sky_par.remove_doors()
+                    if sky_par is not None:
+                        glz_areas.append(
+                            sky_par.area_from_face(self.comparison_floor_geometry))
+            else:
+                sky_par = self.host.skylight_parameters
+                if isinstance(sky_par, DetailedSkylights):
+                    sky_par = sky_par.remove_windows()
+                    if sky_par is not None:
+                        glz_areas.append(sky_par.area_from_face(self.host.floor_geometry))
+        return sum(glz_areas)
+
+    @property
+    def door_area_difference(self):
+        """Get a number for the difference between host and comparison door area.
+
+        This number will be positive if the door area increased in the host room
+        compared to the comparison room and negative if it decreased.
+        """
+        # compute the door area
+        segs, win_pars = self.host.floor_segments, self.host.window_parameters
+        glz_areas = []
+        for seg, glz in zip(segs, win_pars):
+            if isinstance(glz, _AsymmetricBase):
+                glz = glz.remove_windows()
+                if glz is not None:
+                    area = glz.area_from_segment(seg, self.host.floor_to_ceiling_height)
+                    glz_areas.append(area)
+        # compute the skylight area
+        if self.host.is_top_exposed:
+            sky_par = self.host.skylight_parameters
+            if isinstance(sky_par, DetailedSkylights):
+                sky_par = sky_par.remove_windows()
+                if sky_par is not None:
+                    glz_areas.append(sky_par.area_from_face(self.host.floor_geometry))
+        return sum(glz_areas) - self.door_area
+
+    @property
+    def door_area_abs_difference(self):
+        """Get a number for the difference between host and comparison door area.
+        """
+        return abs(self.door_area_difference)
+
+    @property
+    def door_area_percent_change(self):
+        """Get a number between 0 an 100 for the percent change between door areas.
+        """
+        try:
+            return (self.door_area_abs_difference / self.door_area) * 100
         except ZeroDivisionError:
             return 0
 
