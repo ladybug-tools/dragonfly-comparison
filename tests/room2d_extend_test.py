@@ -39,27 +39,38 @@ def test_comparison_properties_setability():
     assert room.properties.comparison.comparison_windows is None
     assert room.properties.comparison.comparison_skylight is None
     assert room.properties.comparison.floor_area_difference == 0
+    assert room.properties.comparison.wall_area_difference == 0
     assert room.properties.comparison.wall_sub_face_area_difference == 0
     assert room.properties.comparison.roof_sub_face_area_difference == 0
+    assert room.properties.comparison.window_area_abs_difference == 0
+    assert room.properties.comparison.door_area_abs_difference == 0
 
     room.properties.comparison.reset()
     assert isinstance(room.properties.comparison.comparison_floor_geometry, Face3D)
     assert isinstance(room.properties.comparison.comparison_windows, tuple)
     assert isinstance(room.properties.comparison.comparison_skylight, GriddedSkylightRatio)
     assert room.properties.comparison.floor_area_difference == 0
+    assert room.properties.comparison.wall_area_difference == 0
     assert room.properties.comparison.wall_sub_face_area_difference == 0
     assert room.properties.comparison.roof_sub_face_area_difference == 0
+    assert room.properties.comparison.window_area_abs_difference == 0
+    assert room.properties.comparison.door_area_abs_difference == 0
 
     snap_points = (Point2D(10.5, 0), Point2D(10.5, 10.5))
     room.snap_to_points(snap_points, 1.0)
     assert room.properties.comparison.floor_area_difference == \
         pytest.approx(7.625, abs=1e-3)
+    assert room.properties.comparison.wall_area_difference == \
+        pytest.approx(4.5356, abs=1e-3)
     assert room.properties.comparison.wall_sub_face_area_difference == \
         pytest.approx(1.8142776, abs=1e-3)
     assert room.properties.comparison.roof_sub_face_area_difference == \
         pytest.approx(0.38125, abs=1e-3)
     assert room.properties.comparison.sub_face_area_difference == \
         pytest.approx(2.1955276, abs=1e-3)
+    assert room.properties.comparison.window_area_difference == \
+        pytest.approx(2.1955, abs=1e-3)
+    assert room.properties.comparison.door_area_difference == 0
 
     assert room.properties.comparison.floor_area_percent_change == \
         pytest.approx(7.625, abs=1e-3)
