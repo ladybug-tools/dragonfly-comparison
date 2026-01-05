@@ -1,0 +1,7 @@
+dragonfly\_comparison.properties.model module
+=============================================
+
+.. automodule:: dragonfly_comparison.properties.model
+   :members:
+   :undoc-members:
+   :show-inheritance:

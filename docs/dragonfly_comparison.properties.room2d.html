@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>dragonfly_comparison.properties.room2d module &#8212; dragonfly-comparison  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=0b9525ea" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="dragonfly_comparison.properties.model module" href="dragonfly_comparison.properties.model.html" />
+<link rel="icon" type="image/x-icon" href="https://github.com/ladybug-tools/artwork/raw/refs/heads/master/icons_bugs/ico/dragonfly.ico">
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          dragonfly-comparison</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">dragonfly_comparison</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="dragonfly_comparison.html">dragonfly_comparison package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="dragonfly_comparison.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="dragonfly_comparison.properties.html">dragonfly_comparison.properties package</a><ul class="current">
+<li class="toctree-l5 current"><a class="reference internal" href="dragonfly_comparison.properties.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l6"><a class="reference internal" href="dragonfly_comparison.properties.model.html">dragonfly_comparison.properties.model module</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="dragonfly_comparison.properties.model.html#dragonfly_comparison.properties.model.ModelComparisonProperties"><code class="docutils literal notranslate"><span class="pre">ModelComparisonProperties</span></code></a><ul>
+<li class="toctree-l8"><a class="reference internal" href="dragonfly_comparison.properties.model.html#dragonfly_comparison.properties.model.ModelComparisonProperties.ToString"><code class="docutils literal notranslate"><span class="pre">ToString()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="dragonfly_comparison.properties.model.html#dragonfly_comparison.properties.model.ModelComparisonProperties.apply_properties_from_dict"><code class="docutils literal notranslate"><span class="pre">apply_properties_from_dict()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="dragonfly_comparison.properties.model.html#dragonfly_comparison.properties.model.ModelComparisonProperties.duplicate"><code class="docutils literal notranslate"><span class="pre">duplicate()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="dragonfly_comparison.properties.model.html#dragonfly_comparison.properties.model.ModelComparisonProperties.reset"><code class="docutils literal notranslate"><span class="pre">reset()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="dragonfly_comparison.properties.model.html#dragonfly_comparison.properties.model.ModelComparisonProperties.set_from_model"><code class="docutils literal notranslate"><span class="pre">set_from_model()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="dragonfly_comparison.properties.model.html#dragonfly_comparison.properties.model.ModelComparisonProperties.to_dict"><code class="docutils literal notranslate"><span class="pre">to_dict()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="dragonfly_comparison.properties.model.html#dragonfly_comparison.properties.model.ModelComparisonProperties.host"><code class="docutils literal notranslate"><span class="pre">host</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6 current"><a class="current reference internal" href="#">dragonfly_comparison.properties.room2d module</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties"><code class="docutils literal notranslate"><span class="pre">Room2DComparisonProperties</span></code></a><ul>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.ToString"><code class="docutils literal notranslate"><span class="pre">ToString()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.apply_properties_from_dict"><code class="docutils literal notranslate"><span class="pre">apply_properties_from_dict()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.duplicate"><code class="docutils literal notranslate"><span class="pre">duplicate()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.from_dict"><code class="docutils literal notranslate"><span class="pre">from_dict()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.move"><code class="docutils literal notranslate"><span class="pre">move()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.reset"><code class="docutils literal notranslate"><span class="pre">reset()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.restore"><code class="docutils literal notranslate"><span class="pre">restore()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.rotate_xy"><code class="docutils literal notranslate"><span class="pre">rotate_xy()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.scale"><code class="docutils literal notranslate"><span class="pre">scale()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.set_from_room_2d"><code class="docutils literal notranslate"><span class="pre">set_from_room_2d()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.to_dict"><code class="docutils literal notranslate"><span class="pre">to_dict()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.comparison_floor_geometry"><code class="docutils literal notranslate"><span class="pre">comparison_floor_geometry</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.comparison_skylight"><code class="docutils literal notranslate"><span class="pre">comparison_skylight</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.comparison_windows"><code class="docutils literal notranslate"><span class="pre">comparison_windows</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area"><code class="docutils literal notranslate"><span class="pre">door_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">door_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area_difference"><code class="docutils literal notranslate"><span class="pre">door_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area_percent_change"><code class="docutils literal notranslate"><span class="pre">door_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area"><code class="docutils literal notranslate"><span class="pre">floor_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">floor_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area_difference"><code class="docutils literal notranslate"><span class="pre">floor_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area_percent_change"><code class="docutils literal notranslate"><span class="pre">floor_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_segments"><code class="docutils literal notranslate"><span class="pre">floor_segments</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.host"><code class="docutils literal notranslate"><span class="pre">host</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area"><code class="docutils literal notranslate"><span class="pre">roof_sub_face_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">roof_sub_face_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area_difference"><code class="docutils literal notranslate"><span class="pre">roof_sub_face_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area_percent_change"><code class="docutils literal notranslate"><span class="pre">roof_sub_face_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area"><code class="docutils literal notranslate"><span class="pre">sub_face_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">sub_face_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area_difference"><code class="docutils literal notranslate"><span class="pre">sub_face_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area_percent_change"><code class="docutils literal notranslate"><span class="pre">sub_face_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area"><code class="docutils literal notranslate"><span class="pre">wall_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">wall_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area_difference"><code class="docutils literal notranslate"><span class="pre">wall_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area_percent_change"><code class="docutils literal notranslate"><span class="pre">wall_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area"><code class="docutils literal notranslate"><span class="pre">wall_sub_face_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">wall_sub_face_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area_difference"><code class="docutils literal notranslate"><span class="pre">wall_sub_face_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area_percent_change"><code class="docutils literal notranslate"><span class="pre">wall_sub_face_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area"><code class="docutils literal notranslate"><span class="pre">window_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">window_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area_difference"><code class="docutils literal notranslate"><span class="pre">window_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area_percent_change"><code class="docutils literal notranslate"><span class="pre">window_area_percent_change</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="dragonfly_comparison.properties.html#module-dragonfly_comparison.properties">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dragonfly_comparison.html#module-dragonfly_comparison">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">dragonfly_comparison</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="dragonfly_comparison.html">dragonfly_comparison package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="dragonfly_comparison.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="dragonfly_comparison.properties.html">dragonfly_comparison.properties package</a><ul class="current">
+<li class="toctree-l5 current"><a class="reference internal" href="dragonfly_comparison.properties.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l6"><a class="reference internal" href="dragonfly_comparison.properties.model.html">dragonfly_comparison.properties.model module</a></li>
+<li class="toctree-l6 current"><a class="current reference internal" href="#">dragonfly_comparison.properties.room2d module</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties"><code class="docutils literal notranslate"><span class="pre">Room2DComparisonProperties</span></code></a><ul>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.ToString"><code class="docutils literal notranslate"><span class="pre">ToString()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.apply_properties_from_dict"><code class="docutils literal notranslate"><span class="pre">apply_properties_from_dict()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.duplicate"><code class="docutils literal notranslate"><span class="pre">duplicate()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.from_dict"><code class="docutils literal notranslate"><span class="pre">from_dict()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.move"><code class="docutils literal notranslate"><span class="pre">move()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.reset"><code class="docutils literal notranslate"><span class="pre">reset()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.restore"><code class="docutils literal notranslate"><span class="pre">restore()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.rotate_xy"><code class="docutils literal notranslate"><span class="pre">rotate_xy()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.scale"><code class="docutils literal notranslate"><span class="pre">scale()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.set_from_room_2d"><code class="docutils literal notranslate"><span class="pre">set_from_room_2d()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.to_dict"><code class="docutils literal notranslate"><span class="pre">to_dict()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.comparison_floor_geometry"><code class="docutils literal notranslate"><span class="pre">comparison_floor_geometry</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.comparison_skylight"><code class="docutils literal notranslate"><span class="pre">comparison_skylight</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.comparison_windows"><code class="docutils literal notranslate"><span class="pre">comparison_windows</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area"><code class="docutils literal notranslate"><span class="pre">door_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">door_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area_difference"><code class="docutils literal notranslate"><span class="pre">door_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area_percent_change"><code class="docutils literal notranslate"><span class="pre">door_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area"><code class="docutils literal notranslate"><span class="pre">floor_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">floor_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area_difference"><code class="docutils literal notranslate"><span class="pre">floor_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area_percent_change"><code class="docutils literal notranslate"><span class="pre">floor_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_segments"><code class="docutils literal notranslate"><span class="pre">floor_segments</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.host"><code class="docutils literal notranslate"><span class="pre">host</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area"><code class="docutils literal notranslate"><span class="pre">roof_sub_face_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">roof_sub_face_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area_difference"><code class="docutils literal notranslate"><span class="pre">roof_sub_face_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area_percent_change"><code class="docutils literal notranslate"><span class="pre">roof_sub_face_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area"><code class="docutils literal notranslate"><span class="pre">sub_face_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">sub_face_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area_difference"><code class="docutils literal notranslate"><span class="pre">sub_face_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area_percent_change"><code class="docutils literal notranslate"><span class="pre">sub_face_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area"><code class="docutils literal notranslate"><span class="pre">wall_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">wall_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area_difference"><code class="docutils literal notranslate"><span class="pre">wall_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area_percent_change"><code class="docutils literal notranslate"><span class="pre">wall_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area"><code class="docutils literal notranslate"><span class="pre">wall_sub_face_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">wall_sub_face_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area_difference"><code class="docutils literal notranslate"><span class="pre">wall_sub_face_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area_percent_change"><code class="docutils literal notranslate"><span class="pre">wall_sub_face_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area"><code class="docutils literal notranslate"><span class="pre">window_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">window_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area_difference"><code class="docutils literal notranslate"><span class="pre">window_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area_percent_change"><code class="docutils literal notranslate"><span class="pre">window_area_percent_change</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="dragonfly_comparison.properties.html#module-dragonfly_comparison.properties">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dragonfly_comparison.html#module-dragonfly_comparison">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="dragonfly_comparison.properties.model.html" title="Previous Chapter: dragonfly_comparison.properties.model module"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; dragonfly_com...</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/dragonfly_comparison.properties.room2d.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-4">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">dragonfly_comparison</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="dragonfly_comparison.html">dragonfly_comparison package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="dragonfly_comparison.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="dragonfly_comparison.properties.html">dragonfly_comparison.properties package</a><ul class="current">
+<li class="toctree-l5 current"><a class="reference internal" href="dragonfly_comparison.properties.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l6"><a class="reference internal" href="dragonfly_comparison.properties.model.html">dragonfly_comparison.properties.model module</a></li>
+<li class="toctree-l6 current"><a class="current reference internal" href="#">dragonfly_comparison.properties.room2d module</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties"><code class="docutils literal notranslate"><span class="pre">Room2DComparisonProperties</span></code></a><ul>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.ToString"><code class="docutils literal notranslate"><span class="pre">ToString()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.apply_properties_from_dict"><code class="docutils literal notranslate"><span class="pre">apply_properties_from_dict()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.duplicate"><code class="docutils literal notranslate"><span class="pre">duplicate()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.from_dict"><code class="docutils literal notranslate"><span class="pre">from_dict()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.move"><code class="docutils literal notranslate"><span class="pre">move()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.reset"><code class="docutils literal notranslate"><span class="pre">reset()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.restore"><code class="docutils literal notranslate"><span class="pre">restore()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.rotate_xy"><code class="docutils literal notranslate"><span class="pre">rotate_xy()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.scale"><code class="docutils literal notranslate"><span class="pre">scale()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.set_from_room_2d"><code class="docutils literal notranslate"><span class="pre">set_from_room_2d()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.to_dict"><code class="docutils literal notranslate"><span class="pre">to_dict()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.comparison_floor_geometry"><code class="docutils literal notranslate"><span class="pre">comparison_floor_geometry</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.comparison_skylight"><code class="docutils literal notranslate"><span class="pre">comparison_skylight</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.comparison_windows"><code class="docutils literal notranslate"><span class="pre">comparison_windows</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area"><code class="docutils literal notranslate"><span class="pre">door_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">door_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area_difference"><code class="docutils literal notranslate"><span class="pre">door_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area_percent_change"><code class="docutils literal notranslate"><span class="pre">door_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area"><code class="docutils literal notranslate"><span class="pre">floor_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">floor_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area_difference"><code class="docutils literal notranslate"><span class="pre">floor_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area_percent_change"><code class="docutils literal notranslate"><span class="pre">floor_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_segments"><code class="docutils literal notranslate"><span class="pre">floor_segments</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.host"><code class="docutils literal notranslate"><span class="pre">host</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area"><code class="docutils literal notranslate"><span class="pre">roof_sub_face_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">roof_sub_face_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area_difference"><code class="docutils literal notranslate"><span class="pre">roof_sub_face_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area_percent_change"><code class="docutils literal notranslate"><span class="pre">roof_sub_face_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area"><code class="docutils literal notranslate"><span class="pre">sub_face_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">sub_face_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area_difference"><code class="docutils literal notranslate"><span class="pre">sub_face_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area_percent_change"><code class="docutils literal notranslate"><span class="pre">sub_face_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area"><code class="docutils literal notranslate"><span class="pre">wall_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">wall_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area_difference"><code class="docutils literal notranslate"><span class="pre">wall_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area_percent_change"><code class="docutils literal notranslate"><span class="pre">wall_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area"><code class="docutils literal notranslate"><span class="pre">wall_sub_face_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">wall_sub_face_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area_difference"><code class="docutils literal notranslate"><span class="pre">wall_sub_face_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area_percent_change"><code class="docutils literal notranslate"><span class="pre">wall_sub_face_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area"><code class="docutils literal notranslate"><span class="pre">window_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">window_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area_difference"><code class="docutils literal notranslate"><span class="pre">window_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area_percent_change"><code class="docutils literal notranslate"><span class="pre">window_area_percent_change</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="dragonfly_comparison.properties.html#module-dragonfly_comparison.properties">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="dragonfly_comparison.html#module-dragonfly_comparison">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="body col-md-8 content" role="main">
+      
+  <section id="module-dragonfly_comparison.properties.room2d">
+<span id="dragonfly-comparison-properties-room2d-module"></span><h1>dragonfly_comparison.properties.room2d module<a class="headerlink" href="#module-dragonfly_comparison.properties.room2d" title="Link to this heading">¶</a></h1>
+<p>Room2D Comparison Properties.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dragonfly_comparison.properties.room2d.</span></span><span class="sig-name descname"><span class="pre">Room2DComparisonProperties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comparison_floor_geometry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comparison_windows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comparison_skylight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dragonfly_comparison/properties/room2d.html#Room2DComparisonProperties"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Comparison Properties for Dragonfly Room2D.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> – A dragonfly_core Room2D object that hosts these properties.</p></li>
+<li><p><strong>comparison_floor_geometry</strong> – A single horizontal Face3D representing the
+floor plate of the Room2D to which the host Room2D is being
+compared. (Default: None).</p></li>
+<li><p><strong>comparison_windows</strong> – A list of WindowParameter objects that dictate the
+window geometries of the Room2D to which the host Room2D is being
+compared. (Default: None).</p></li>
+<li><p><strong>comparison_skylight</strong> – A SkylightParameters object that dictate the
+skylight geometries of the Room2D to which the host Room2D is being
+compared. (Default: None).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Properties:</dt><dd><ul class="simple">
+<li><p>host</p></li>
+<li><p>comparison_floor_geometry</p></li>
+<li><p>comparison_windows</p></li>
+<li><p>comparison_skylight</p></li>
+<li><p>floor_area</p></li>
+<li><p>floor_area_difference</p></li>
+<li><p>floor_area_abs_difference</p></li>
+<li><p>floor_area_percent_change</p></li>
+<li><p>wall_area</p></li>
+<li><p>wall_area_difference</p></li>
+<li><p>wall_area_abs_difference</p></li>
+<li><p>wall_area_percent_change</p></li>
+<li><p>wall_sub_face_area</p></li>
+<li><p>wall_sub_face_area_difference</p></li>
+<li><p>wall_sub_face_area_abs_difference</p></li>
+<li><p>wall_sub_face_area_percent_change</p></li>
+<li><p>roof_sub_face_area</p></li>
+<li><p>roof_sub_face_area_difference</p></li>
+<li><p>roof_sub_face_area_abs_difference</p></li>
+<li><p>roof_sub_face_area_percent_change</p></li>
+<li><p>sub_face_area</p></li>
+<li><p>sub_face_area_difference</p></li>
+<li><p>sub_face_area_abs_difference</p></li>
+<li><p>sub_face_area_percent_change</p></li>
+<li><p>window_area</p></li>
+<li><p>window_area_difference</p></li>
+<li><p>window_area_abs_difference</p></li>
+<li><p>window_area_percent_change</p></li>
+<li><p>door_area</p></li>
+<li><p>door_area_difference</p></li>
+<li><p>door_area_abs_difference</p></li>
+<li><p>door_area_percent_change</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.ToString">
+<span class="sig-name descname"><span class="pre">ToString</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/dragonfly_comparison/properties/room2d.html#Room2DComparisonProperties.ToString"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.ToString" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.apply_properties_from_dict">
+<span class="sig-name descname"><span class="pre">apply_properties_from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dragonfly_comparison/properties/room2d.html#Room2DComparisonProperties.apply_properties_from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.apply_properties_from_dict" title="Link to this definition">¶</a></dt>
+<dd><p>Apply properties from a Room2DComparisonProperties dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – A Room2DComparisonProperties dict (typically coming from a Model).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.duplicate">
+<span class="sig-name descname"><span class="pre">duplicate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dragonfly_comparison/properties/room2d.html#Room2DComparisonProperties.duplicate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.duplicate" title="Link to this definition">¶</a></dt>
+<dd><p>Get a copy of this object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>new_host</strong> – A new Room2D object that hosts these properties.
+If None, the properties will be duplicated with the same host.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.from_dict">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dragonfly_comparison/properties/room2d.html#Room2DComparisonProperties.from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.from_dict" title="Link to this definition">¶</a></dt>
+<dd><p>Create Room2DComparisonProperties from a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – A dictionary representation of Room2DComparisonProperties in the
+format below.</p></li>
+<li><p><strong>host</strong> – A Room2D object that hosts these properties.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s1">&#39;Room2DComparisonProperties&#39;</span><span class="p">,</span>
+<span class="s2">&quot;modifier_set&quot;</span><span class="p">:</span> <span class="p">{},</span>  <span class="c1"># A ModifierSet dictionary</span>
+<span class="s2">&quot;grid_parameters&quot;</span><span class="p">:</span> <span class="p">[]</span>  <span class="c1"># A list of GridParameter dictionaries</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.move">
+<span class="sig-name descname"><span class="pre">move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">moving_vec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dragonfly_comparison/properties/room2d.html#Room2DComparisonProperties.move"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.move" title="Link to this definition">¶</a></dt>
+<dd><p>Move these properties along a vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>moving_vec</strong> – A ladybug_geometry Vector3D with the direction and distance
+to move the room.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/dragonfly_comparison/properties/room2d.html#Room2DComparisonProperties.reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.reset" title="Link to this definition">¶</a></dt>
+<dd><p>Reset the comparison attributes using the host Room2D.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.restore">
+<span class="sig-name descname"><span class="pre">restore</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/dragonfly_comparison/properties/room2d.html#Room2DComparisonProperties.restore"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.restore" title="Link to this definition">¶</a></dt>
+<dd><p>Get a Room2D with host properties and geometry restored from the comparison.</p>
+<p>The restored Room2D returned from this method will have all boundary
+conditions reset to outdoors and all shading parameters removed. Otherwise,
+all properties of the returned Room2D will match the host and all geometry
+will match the comparison.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.rotate_xy">
+<span class="sig-name descname"><span class="pre">rotate_xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dragonfly_comparison/properties/room2d.html#Room2DComparisonProperties.rotate_xy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.rotate_xy" title="Link to this definition">¶</a></dt>
+<dd><p>Rotate these properties counterclockwise in the XY plane by a certain angle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>angle</strong> – An angle in degrees.</p></li>
+<li><p><strong>origin</strong> – A ladybug_geometry Point3D for the origin around which the
+object will be rotated.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.scale">
+<span class="sig-name descname"><span class="pre">scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dragonfly_comparison/properties/room2d.html#Room2DComparisonProperties.scale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.scale" title="Link to this definition">¶</a></dt>
+<dd><p>Scale these properties by a factor from an origin point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>factor</strong> – A number representing how much the object should be scaled.</p></li>
+<li><p><strong>origin</strong> – A ladybug_geometry Point3D representing the origin from which
+to scale. If None, it will be scaled from the World origin (0, 0, 0).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.set_from_room_2d">
+<span class="sig-name descname"><span class="pre">set_from_room_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comparison_room_2d</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dragonfly_comparison/properties/room2d.html#Room2DComparisonProperties.set_from_room_2d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.set_from_room_2d" title="Link to this definition">¶</a></dt>
+<dd><p>Set the attributes of this Room2DComparisonProperties using a Room2D.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>comparison_room_2d</strong> – A Room2D to which the host Room2D is being compared.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">abridged</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dragonfly_comparison/properties/room2d.html#Room2DComparisonProperties.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.to_dict" title="Link to this definition">¶</a></dt>
+<dd><p>Return Room2D comparison properties as a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>abridged</strong> – Boolean for whether the full dictionary of the Room2D should
+be written (False) or just the identifier of the the individual
+properties (True). Default: False.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.comparison_floor_geometry">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">comparison_floor_geometry</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.comparison_floor_geometry" title="Link to this definition">¶</a></dt>
+<dd><p>Get or set a horizontal Face3D for the Room2D to which the host is compared.</p>
+<p>If not set, all properties relating to floor geometry comparison will
+be zero (aka. unchanged).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.comparison_skylight">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">comparison_skylight</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.comparison_skylight" title="Link to this definition">¶</a></dt>
+<dd><p>Get or set SkylightParameters describing how to generate skylights.</p>
+<p>If not set, all properties relating to roof sub-face geometry comparison
+will be zero (aka. unchanged).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.comparison_windows">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">comparison_windows</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.comparison_windows" title="Link to this definition">¶</a></dt>
+<dd><p>Get or set a tuple of WindowParameters describing how to generate windows.</p>
+<p>If not set, all properties relating to wall sub-face geometry comparison
+will be zero (aka. unchanged).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">door_area</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number for the door area of the comparison Room2D.</p>
+<p>This includes both doors in walls and roofs.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area_abs_difference">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">door_area_abs_difference</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area_abs_difference" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number for the difference between host and comparison door area.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area_difference">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">door_area_difference</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area_difference" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number for the difference between host and comparison door area.</p>
+<p>This number will be positive if the door area increased in the host room
+compared to the comparison room and negative if it decreased.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area_percent_change">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">door_area_percent_change</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area_percent_change" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number between 0 an 100 for the percent change between door areas.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">floor_area</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number for the floor area of the Room2D to which the host is compared.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area_abs_difference">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">floor_area_abs_difference</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area_abs_difference" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number for the difference between the host and comparison floor area.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area_difference">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">floor_area_difference</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area_difference" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number for the difference between the host and comparison floor area.</p>
+<p>This number will be positive if the floor area increased in the host room
+compared to the comparison room and negative if it decreased.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area_percent_change">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">floor_area_percent_change</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area_percent_change" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number between 0 an 100 for the percent change between floor areas.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_segments">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">floor_segments</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_segments" title="Link to this definition">¶</a></dt>
+<dd><p>Get a list of LineSegment3D objects for each wall of the comparison Room.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.host">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">host</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.host" title="Link to this definition">¶</a></dt>
+<dd><p>Get the Room2D object hosting these properties.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">roof_sub_face_area</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area" title="Link to this definition">¶</a></dt>
+<dd><p>Get a the total sub-face area of the comparison Room’s roofs.</p>
+<p>This includes both Apertures and overhead Doors.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area_abs_difference">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">roof_sub_face_area_abs_difference</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area_abs_difference" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number for the difference between host and comparison roof sub-face area.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area_difference">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">roof_sub_face_area_difference</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area_difference" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number for the difference between host and comparison roof sub-face area.</p>
+<p>This number will be positive if the sub-face area increased in the host room
+compared to the comparison room and negative if it decreased.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area_percent_change">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">roof_sub_face_area_percent_change</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area_percent_change" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number between 0 an 100 for the percent change between roof sub-face areas.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sub_face_area</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area" title="Link to this definition">¶</a></dt>
+<dd><p>Get a the total sub-face area of the comparison Room.</p>
+<p>This includes both Apertures and overhead Doors.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area_abs_difference">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sub_face_area_abs_difference</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area_abs_difference" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number for the difference between host and comparison sub-face area.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area_difference">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sub_face_area_difference</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area_difference" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number for the difference between host and comparison sub-face area.</p>
+<p>This number will be positive if the sub-face area increased in the host room
+compared to the comparison room and negative if it decreased.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area_percent_change">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sub_face_area_percent_change</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area_percent_change" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number between 0 an 100 for the percent change between sub-face areas.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wall_area</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number for the wall area of the Room2D to which the host is compared.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area_abs_difference">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wall_area_abs_difference</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area_abs_difference" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number for the difference between the host and comparison wall area.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area_difference">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wall_area_difference</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area_difference" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number for the difference between the host and comparison wall area.</p>
+<p>This number will be positive if the wall area increased in the host room
+compared to the comparison room and negative if it decreased.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area_percent_change">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wall_area_percent_change</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area_percent_change" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number between 0 an 100 for the percent change between wall areas.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wall_sub_face_area</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number for the wall sub-face area of the comparison Room2D.</p>
+<p>This includes both Apertures and Doors.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area_abs_difference">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wall_sub_face_area_abs_difference</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area_abs_difference" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number for the difference between host and comparison wall sub-face area.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area_difference">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wall_sub_face_area_difference</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area_difference" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number for the difference between host and comparison wall sub-face area.</p>
+<p>This number will be positive if the sub-face area increased in the host room
+compared to the comparison room and negative if it decreased.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area_percent_change">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">wall_sub_face_area_percent_change</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area_percent_change" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number between 0 an 100 for the percent change between wall sub-face areas.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">window_area</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number for the window area of the comparison Room2D.</p>
+<p>This includes both windows in walls and roofs.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area_abs_difference">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">window_area_abs_difference</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area_abs_difference" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number for the difference between host and comparison window area.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area_difference">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">window_area_difference</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area_difference" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number for the difference between host and comparison window area.</p>
+<p>This number will be positive if the window area increased in the host room
+compared to the comparison room and negative if it decreased.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area_percent_change">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">window_area_percent_change</span></span><a class="headerlink" href="#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area_percent_change" title="Link to this definition">¶</a></dt>
+<dd><p>Get a number between 0 an 100 for the percent change between window areas.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2026, Ladybug Tools.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.0.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

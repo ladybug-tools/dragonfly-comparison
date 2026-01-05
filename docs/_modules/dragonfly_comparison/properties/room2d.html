@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dragonfly_comparison.properties.room2d &#8212; dragonfly-comparison  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/bootstrap-sphinx.css?v=0bf093e7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=0b9525ea" />
+    <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+<link rel="icon" type="image/x-icon" href="https://github.com/ladybug-tools/artwork/raw/refs/heads/master/icons_bugs/ico/dragonfly.ico">
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../../../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../../../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../../../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          dragonfly-comparison</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">dragonfly_comparison</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../dragonfly_comparison.html">dragonfly_comparison package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../dragonfly_comparison.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../dragonfly_comparison.properties.html">dragonfly_comparison.properties package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../dragonfly_comparison.properties.html#submodules">Submodules</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../../dragonfly_comparison.properties.model.html">dragonfly_comparison.properties.model module</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../../dragonfly_comparison.properties.model.html#dragonfly_comparison.properties.model.ModelComparisonProperties"><code class="docutils literal notranslate"><span class="pre">ModelComparisonProperties</span></code></a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.model.html#dragonfly_comparison.properties.model.ModelComparisonProperties.ToString"><code class="docutils literal notranslate"><span class="pre">ToString()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.model.html#dragonfly_comparison.properties.model.ModelComparisonProperties.apply_properties_from_dict"><code class="docutils literal notranslate"><span class="pre">apply_properties_from_dict()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.model.html#dragonfly_comparison.properties.model.ModelComparisonProperties.duplicate"><code class="docutils literal notranslate"><span class="pre">duplicate()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.model.html#dragonfly_comparison.properties.model.ModelComparisonProperties.reset"><code class="docutils literal notranslate"><span class="pre">reset()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.model.html#dragonfly_comparison.properties.model.ModelComparisonProperties.set_from_model"><code class="docutils literal notranslate"><span class="pre">set_from_model()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.model.html#dragonfly_comparison.properties.model.ModelComparisonProperties.to_dict"><code class="docutils literal notranslate"><span class="pre">to_dict()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.model.html#dragonfly_comparison.properties.model.ModelComparisonProperties.host"><code class="docutils literal notranslate"><span class="pre">host</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html">dragonfly_comparison.properties.room2d module</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties"><code class="docutils literal notranslate"><span class="pre">Room2DComparisonProperties</span></code></a><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.ToString"><code class="docutils literal notranslate"><span class="pre">ToString()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.apply_properties_from_dict"><code class="docutils literal notranslate"><span class="pre">apply_properties_from_dict()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.duplicate"><code class="docutils literal notranslate"><span class="pre">duplicate()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.from_dict"><code class="docutils literal notranslate"><span class="pre">from_dict()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.move"><code class="docutils literal notranslate"><span class="pre">move()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.reset"><code class="docutils literal notranslate"><span class="pre">reset()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.restore"><code class="docutils literal notranslate"><span class="pre">restore()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.rotate_xy"><code class="docutils literal notranslate"><span class="pre">rotate_xy()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.scale"><code class="docutils literal notranslate"><span class="pre">scale()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.set_from_room_2d"><code class="docutils literal notranslate"><span class="pre">set_from_room_2d()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.to_dict"><code class="docutils literal notranslate"><span class="pre">to_dict()</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.comparison_floor_geometry"><code class="docutils literal notranslate"><span class="pre">comparison_floor_geometry</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.comparison_skylight"><code class="docutils literal notranslate"><span class="pre">comparison_skylight</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.comparison_windows"><code class="docutils literal notranslate"><span class="pre">comparison_windows</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area"><code class="docutils literal notranslate"><span class="pre">door_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">door_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area_difference"><code class="docutils literal notranslate"><span class="pre">door_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.door_area_percent_change"><code class="docutils literal notranslate"><span class="pre">door_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area"><code class="docutils literal notranslate"><span class="pre">floor_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">floor_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area_difference"><code class="docutils literal notranslate"><span class="pre">floor_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_area_percent_change"><code class="docutils literal notranslate"><span class="pre">floor_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.floor_segments"><code class="docutils literal notranslate"><span class="pre">floor_segments</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.host"><code class="docutils literal notranslate"><span class="pre">host</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area"><code class="docutils literal notranslate"><span class="pre">roof_sub_face_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">roof_sub_face_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area_difference"><code class="docutils literal notranslate"><span class="pre">roof_sub_face_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.roof_sub_face_area_percent_change"><code class="docutils literal notranslate"><span class="pre">roof_sub_face_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area"><code class="docutils literal notranslate"><span class="pre">sub_face_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">sub_face_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area_difference"><code class="docutils literal notranslate"><span class="pre">sub_face_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.sub_face_area_percent_change"><code class="docutils literal notranslate"><span class="pre">sub_face_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area"><code class="docutils literal notranslate"><span class="pre">wall_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">wall_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area_difference"><code class="docutils literal notranslate"><span class="pre">wall_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_area_percent_change"><code class="docutils literal notranslate"><span class="pre">wall_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area"><code class="docutils literal notranslate"><span class="pre">wall_sub_face_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">wall_sub_face_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area_difference"><code class="docutils literal notranslate"><span class="pre">wall_sub_face_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.wall_sub_face_area_percent_change"><code class="docutils literal notranslate"><span class="pre">wall_sub_face_area_percent_change</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area"><code class="docutils literal notranslate"><span class="pre">window_area</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area_abs_difference"><code class="docutils literal notranslate"><span class="pre">window_area_abs_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area_difference"><code class="docutils literal notranslate"><span class="pre">window_area_difference</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.window_area_percent_change"><code class="docutils literal notranslate"><span class="pre">window_area_percent_change</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../../dragonfly_comparison.properties.html#module-dragonfly_comparison.properties">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../dragonfly_comparison.html#module-dragonfly_comparison">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">dragonfly_comparison</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm"></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-4">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">dragonfly_comparison</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="body col-md-8 content" role="main">
+      
+  <h1>Source code for dragonfly_comparison.properties.room2d</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding=utf-8</span>
+<span class="sd">&quot;&quot;&quot;Room2D Comparison Properties.&quot;&quot;&quot;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">ladybug_geometry.geometry3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Point3D</span><span class="p">,</span> <span class="n">Vector3D</span><span class="p">,</span> <span class="n">Plane</span><span class="p">,</span> <span class="n">Face3D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dragonfly.windowparameter</span><span class="w"> </span><span class="kn">import</span> <span class="n">_WindowParameterBase</span><span class="p">,</span> <span class="n">_AsymmetricBase</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dragonfly.skylightparameter</span><span class="w"> </span><span class="kn">import</span> <span class="n">_SkylightParameterBase</span><span class="p">,</span> <span class="n">DetailedSkylights</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dragonfly.windowparameter</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">glzpar</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dragonfly.skylightparameter</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">skypar</span>
+
+
+<div class="viewcode-block" id="Room2DComparisonProperties">
+<a class="viewcode-back" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Room2DComparisonProperties</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Comparison Properties for Dragonfly Room2D.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        host: A dragonfly_core Room2D object that hosts these properties.</span>
+<span class="sd">        comparison_floor_geometry: A single horizontal Face3D representing the</span>
+<span class="sd">            floor plate of the Room2D to which the host Room2D is being</span>
+<span class="sd">            compared. (Default: None).</span>
+<span class="sd">        comparison_windows: A list of WindowParameter objects that dictate the</span>
+<span class="sd">            window geometries of the Room2D to which the host Room2D is being</span>
+<span class="sd">            compared. (Default: None).</span>
+<span class="sd">        comparison_skylight: A SkylightParameters object that dictate the</span>
+<span class="sd">            skylight geometries of the Room2D to which the host Room2D is being</span>
+<span class="sd">            compared. (Default: None).</span>
+
+<span class="sd">    Properties:</span>
+<span class="sd">        * host</span>
+<span class="sd">        * comparison_floor_geometry</span>
+<span class="sd">        * comparison_windows</span>
+<span class="sd">        * comparison_skylight</span>
+<span class="sd">        * floor_area</span>
+<span class="sd">        * floor_area_difference</span>
+<span class="sd">        * floor_area_abs_difference</span>
+<span class="sd">        * floor_area_percent_change</span>
+<span class="sd">        * wall_area</span>
+<span class="sd">        * wall_area_difference</span>
+<span class="sd">        * wall_area_abs_difference</span>
+<span class="sd">        * wall_area_percent_change</span>
+<span class="sd">        * wall_sub_face_area</span>
+<span class="sd">        * wall_sub_face_area_difference</span>
+<span class="sd">        * wall_sub_face_area_abs_difference</span>
+<span class="sd">        * wall_sub_face_area_percent_change</span>
+<span class="sd">        * roof_sub_face_area</span>
+<span class="sd">        * roof_sub_face_area_difference</span>
+<span class="sd">        * roof_sub_face_area_abs_difference</span>
+<span class="sd">        * roof_sub_face_area_percent_change</span>
+<span class="sd">        * sub_face_area</span>
+<span class="sd">        * sub_face_area_difference</span>
+<span class="sd">        * sub_face_area_abs_difference</span>
+<span class="sd">        * sub_face_area_percent_change</span>
+<span class="sd">        * window_area</span>
+<span class="sd">        * window_area_difference</span>
+<span class="sd">        * window_area_abs_difference</span>
+<span class="sd">        * window_area_percent_change</span>
+<span class="sd">        * door_area</span>
+<span class="sd">        * door_area_difference</span>
+<span class="sd">        * door_area_abs_difference</span>
+<span class="sd">        * door_area_percent_change</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="vm">__slots__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_host&#39;</span><span class="p">,</span> <span class="s1">&#39;_comparison_floor_geometry&#39;</span><span class="p">,</span> <span class="s1">&#39;_comparison_windows&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;_comparison_skylight&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">comparison_floor_geometry</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">comparison_windows</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">comparison_skylight</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize Room2D Comparison properties.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_host</span> <span class="o">=</span> <span class="n">host</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span> <span class="o">=</span> <span class="n">comparison_floor_geometry</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">comparison_windows</span> <span class="o">=</span> <span class="n">comparison_windows</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span> <span class="o">=</span> <span class="n">comparison_skylight</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">host</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the Room2D object hosting these properties.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">comparison_floor_geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get or set a horizontal Face3D for the Room2D to which the host is compared.</span>
+
+<span class="sd">        If not set, all properties relating to floor geometry comparison will</span>
+<span class="sd">        be zero (aka. unchanged).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_comparison_floor_geometry</span>
+
+    <span class="nd">@comparison_floor_geometry</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">comparison_floor_geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># process the floor_geometry</span>
+            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Face3D</span><span class="p">),</span> \
+                <span class="s1">&#39;Expected ladybug_geometry Face3D. Got </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">normal</span><span class="o">.</span><span class="n">z</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># ensure upward-facing Face3D</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+            <span class="c1"># ensure a global 2D origin, which helps in solve adjacency and the dict schema</span>
+            <span class="n">o_pl</span> <span class="o">=</span> <span class="n">Plane</span><span class="p">(</span><span class="n">Vector3D</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">Point3D</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">plane</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">z</span><span class="p">))</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">Face3D</span><span class="p">(</span><span class="n">value</span><span class="o">.</span><span class="n">boundary</span><span class="p">,</span> <span class="n">o_pl</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">holes</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_comparison_floor_geometry</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">comparison_windows</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get or set a tuple of WindowParameters describing how to generate windows.</span>
+
+<span class="sd">        If not set, all properties relating to wall sub-face geometry comparison</span>
+<span class="sd">        will be zero (aka. unchanged).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_comparison_windows</span>
+
+    <span class="nd">@comparison_windows</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">comparison_windows</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">val</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">_WindowParameterBase</span><span class="p">),</span> \
+                        <span class="s1">&#39;Expected Window Parameters. Got </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_comparison_windows</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">comparison_skylight</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get or set SkylightParameters describing how to generate skylights.</span>
+
+<span class="sd">        If not set, all properties relating to roof sub-face geometry comparison</span>
+<span class="sd">        will be zero (aka. unchanged).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_comparison_skylight</span>
+
+    <span class="nd">@comparison_skylight</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">comparison_skylight</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">_SkylightParameterBase</span><span class="p">),</span> \
+                <span class="s1">&#39;Expected Skylight Parameters. Got </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_comparison_skylight</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">floor_segments</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a list of LineSegment3D objects for each wall of the comparison Room.&quot;&quot;&quot;</span>
+        <span class="n">fg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span>
+        <span class="k">if</span> <span class="n">fg</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">fg</span><span class="o">.</span><span class="n">boundary_segments</span> <span class="k">if</span> <span class="n">fg</span><span class="o">.</span><span class="n">holes</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> \
+            <span class="n">fg</span><span class="o">.</span><span class="n">boundary_segments</span> <span class="o">+</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">s</span> <span class="k">for</span> <span class="n">hole</span> <span class="ow">in</span> <span class="n">fg</span><span class="o">.</span><span class="n">hole_segments</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">hole</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">floor_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number for the floor area of the Room2D to which the host is compared.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_area</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span><span class="o">.</span><span class="n">area</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">floor_area_difference</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number for the difference between the host and comparison floor area.</span>
+
+<span class="sd">        This number will be positive if the floor area increased in the host room</span>
+<span class="sd">        compared to the comparison room and negative if it decreased.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_area</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">floor_area</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">floor_area_abs_difference</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number for the difference between the host and comparison floor area.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">floor_area_difference</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">floor_area_percent_change</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number between 0 an 100 for the percent change between floor areas.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">floor_area_abs_difference</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">floor_area</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wall_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number for the wall area of the Room2D to which the host is compared.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">segs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_segments</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span> <span class="ow">is</span> <span class="kc">None</span> \
+            <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">floor_segments</span>
+        <span class="n">ftc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_to_ceiling_height</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">seg</span><span class="o">.</span><span class="n">length</span> <span class="o">*</span> <span class="n">ftc</span> <span class="k">for</span> <span class="n">seg</span> <span class="ow">in</span> <span class="n">segs</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wall_area_difference</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number for the difference between the host and comparison wall area.</span>
+
+<span class="sd">        This number will be positive if the wall area increased in the host room</span>
+<span class="sd">        compared to the comparison room and negative if it decreased.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">segs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_segments</span>
+        <span class="n">ftc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_to_ceiling_height</span>
+        <span class="n">host_floor_area</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">seg</span><span class="o">.</span><span class="n">length</span> <span class="o">*</span> <span class="n">ftc</span> <span class="k">for</span> <span class="n">seg</span> <span class="ow">in</span> <span class="n">segs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">host_floor_area</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">wall_area</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wall_area_abs_difference</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number for the difference between the host and comparison wall area.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wall_area_difference</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wall_area_percent_change</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number between 0 an 100 for the percent change between wall areas.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wall_area_abs_difference</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">wall_area</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wall_sub_face_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number for the wall sub-face area of the comparison Room2D.</span>
+
+<span class="sd">        This includes both Apertures and Doors.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_windows</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">wall_sub_face_area</span>
+        <span class="n">glz_areas</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">seg</span><span class="p">,</span> <span class="n">glz</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">floor_segments</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_windows</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">glz</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">area</span> <span class="o">=</span> <span class="n">glz</span><span class="o">.</span><span class="n">area_from_segment</span><span class="p">(</span><span class="n">seg</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_to_ceiling_height</span><span class="p">)</span>
+                <span class="n">glz_areas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">area</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">glz_areas</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wall_sub_face_area_difference</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number for the difference between host and comparison wall sub-face area.</span>
+
+<span class="sd">        This number will be positive if the sub-face area increased in the host room</span>
+<span class="sd">        compared to the comparison room and negative if it decreased.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">wall_sub_face_area</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">wall_sub_face_area</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wall_sub_face_area_abs_difference</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number for the difference between host and comparison wall sub-face area.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wall_sub_face_area_difference</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wall_sub_face_area_percent_change</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number between 0 an 100 for the percent change between wall sub-face areas.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wall_sub_face_area_abs_difference</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">wall_sub_face_area</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">roof_sub_face_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a the total sub-face area of the comparison Room&#39;s roofs.</span>
+
+<span class="sd">        This includes both Apertures and overhead Doors.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">is_top_exposed</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> \
+                <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">sky_par</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span>
+            <span class="k">return</span> <span class="n">sky_par</span><span class="o">.</span><span class="n">area_from_face</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">roof_sub_face_area</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">roof_sub_face_area_difference</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number for the difference between host and comparison roof sub-face area.</span>
+
+<span class="sd">        This number will be positive if the sub-face area increased in the host room</span>
+<span class="sd">        compared to the comparison room and negative if it decreased.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">roof_sub_face_area</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">roof_sub_face_area</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">roof_sub_face_area_abs_difference</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number for the difference between host and comparison roof sub-face area.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">roof_sub_face_area_difference</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">roof_sub_face_area_percent_change</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number between 0 an 100 for the percent change between roof sub-face areas.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">roof_sub_face_area_abs_difference</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">roof_sub_face_area</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">sub_face_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a the total sub-face area of the comparison Room.</span>
+
+<span class="sd">        This includes both Apertures and overhead Doors.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">wall_sub_face_area</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">roof_sub_face_area</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">sub_face_area_difference</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number for the difference between host and comparison sub-face area.</span>
+
+<span class="sd">        This number will be positive if the sub-face area increased in the host room</span>
+<span class="sd">        compared to the comparison room and negative if it decreased.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">wall_sub_face_area_difference</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">roof_sub_face_area_difference</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">sub_face_area_abs_difference</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number for the difference between host and comparison sub-face area.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sub_face_area_difference</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">sub_face_area_percent_change</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number between 0 an 100 for the percent change between sub-face areas.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sub_face_area_abs_difference</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">sub_face_area</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">window_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number for the window area of the comparison Room2D.</span>
+
+<span class="sd">        This includes both windows in walls and roofs.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># compute the window area</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_windows</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">segs</span><span class="p">,</span> <span class="n">win_pars</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_segments</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">window_parameters</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">segs</span><span class="p">,</span> <span class="n">win_pars</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">floor_segments</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_windows</span>
+        <span class="n">glz_areas</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">seg</span><span class="p">,</span> <span class="n">glz</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">segs</span><span class="p">,</span> <span class="n">win_pars</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">glz</span><span class="p">,</span> <span class="n">_AsymmetricBase</span><span class="p">):</span>
+                <span class="n">glz</span> <span class="o">=</span> <span class="n">glz</span><span class="o">.</span><span class="n">remove_doors</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">glz</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">area</span> <span class="o">=</span> <span class="n">glz</span><span class="o">.</span><span class="n">area_from_segment</span><span class="p">(</span><span class="n">seg</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_to_ceiling_height</span><span class="p">)</span>
+                <span class="n">glz_areas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">area</span><span class="p">)</span>
+        <span class="c1"># compute the skylight area</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">is_top_exposed</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> \
+                    <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">sky_par</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sky_par</span><span class="p">,</span> <span class="n">DetailedSkylights</span><span class="p">):</span>
+                    <span class="n">sky_par</span> <span class="o">=</span> <span class="n">sky_par</span><span class="o">.</span><span class="n">remove_doors</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">sky_par</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">glz_areas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sky_par</span><span class="o">.</span><span class="n">area_from_face</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">sky_par</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">skylight_parameters</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sky_par</span><span class="p">,</span> <span class="n">DetailedSkylights</span><span class="p">):</span>
+                    <span class="n">sky_par</span> <span class="o">=</span> <span class="n">sky_par</span><span class="o">.</span><span class="n">remove_doors</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">sky_par</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">glz_areas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sky_par</span><span class="o">.</span><span class="n">area_from_face</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_geometry</span><span class="p">))</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">glz_areas</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">window_area_difference</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number for the difference between host and comparison window area.</span>
+
+<span class="sd">        This number will be positive if the window area increased in the host room</span>
+<span class="sd">        compared to the comparison room and negative if it decreased.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># compute the window area</span>
+        <span class="n">segs</span><span class="p">,</span> <span class="n">win_pars</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_segments</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">window_parameters</span>
+        <span class="n">glz_areas</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">seg</span><span class="p">,</span> <span class="n">glz</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">segs</span><span class="p">,</span> <span class="n">win_pars</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">glz</span><span class="p">,</span> <span class="n">_AsymmetricBase</span><span class="p">):</span>
+                <span class="n">glz</span> <span class="o">=</span> <span class="n">glz</span><span class="o">.</span><span class="n">remove_doors</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">glz</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">area</span> <span class="o">=</span> <span class="n">glz</span><span class="o">.</span><span class="n">area_from_segment</span><span class="p">(</span><span class="n">seg</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_to_ceiling_height</span><span class="p">)</span>
+                <span class="n">glz_areas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">area</span><span class="p">)</span>
+        <span class="c1"># compute the skylight area</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">is_top_exposed</span><span class="p">:</span>
+            <span class="n">sky_par</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">skylight_parameters</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sky_par</span><span class="p">,</span> <span class="n">DetailedSkylights</span><span class="p">):</span>
+                <span class="n">sky_par</span> <span class="o">=</span> <span class="n">sky_par</span><span class="o">.</span><span class="n">remove_doors</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">sky_par</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">glz_areas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sky_par</span><span class="o">.</span><span class="n">area_from_face</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_geometry</span><span class="p">))</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">glz_areas</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">window_area</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">window_area_abs_difference</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number for the difference between host and comparison window area.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">window_area_difference</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">window_area_percent_change</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number between 0 an 100 for the percent change between window areas.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">window_area_abs_difference</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">window_area</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">door_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number for the door area of the comparison Room2D.</span>
+
+<span class="sd">        This includes both doors in walls and roofs.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># compute the window area</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_windows</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">segs</span><span class="p">,</span> <span class="n">win_pars</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_segments</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">window_parameters</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">segs</span><span class="p">,</span> <span class="n">win_pars</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">floor_segments</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_windows</span>
+        <span class="n">glz_areas</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">seg</span><span class="p">,</span> <span class="n">glz</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">segs</span><span class="p">,</span> <span class="n">win_pars</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">glz</span><span class="p">,</span> <span class="n">_AsymmetricBase</span><span class="p">):</span>
+                <span class="n">glz</span> <span class="o">=</span> <span class="n">glz</span><span class="o">.</span><span class="n">remove_windows</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">glz</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">area</span> <span class="o">=</span> <span class="n">glz</span><span class="o">.</span><span class="n">area_from_segment</span><span class="p">(</span><span class="n">seg</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_to_ceiling_height</span><span class="p">)</span>
+                    <span class="n">glz_areas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">area</span><span class="p">)</span>
+        <span class="c1"># compute the skylight area</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">is_top_exposed</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> \
+                    <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">sky_par</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sky_par</span><span class="p">,</span> <span class="n">DetailedSkylights</span><span class="p">):</span>
+                    <span class="n">sky_par</span> <span class="o">=</span> <span class="n">sky_par</span><span class="o">.</span><span class="n">remove_doors</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="n">sky_par</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">glz_areas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                            <span class="n">sky_par</span><span class="o">.</span><span class="n">area_from_face</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">sky_par</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">skylight_parameters</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sky_par</span><span class="p">,</span> <span class="n">DetailedSkylights</span><span class="p">):</span>
+                    <span class="n">sky_par</span> <span class="o">=</span> <span class="n">sky_par</span><span class="o">.</span><span class="n">remove_windows</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="n">sky_par</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">glz_areas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sky_par</span><span class="o">.</span><span class="n">area_from_face</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_geometry</span><span class="p">))</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">glz_areas</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">door_area_difference</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number for the difference between host and comparison door area.</span>
+
+<span class="sd">        This number will be positive if the door area increased in the host room</span>
+<span class="sd">        compared to the comparison room and negative if it decreased.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># compute the door area</span>
+        <span class="n">segs</span><span class="p">,</span> <span class="n">win_pars</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_segments</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">window_parameters</span>
+        <span class="n">glz_areas</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">seg</span><span class="p">,</span> <span class="n">glz</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">segs</span><span class="p">,</span> <span class="n">win_pars</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">glz</span><span class="p">,</span> <span class="n">_AsymmetricBase</span><span class="p">):</span>
+                <span class="n">glz</span> <span class="o">=</span> <span class="n">glz</span><span class="o">.</span><span class="n">remove_windows</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">glz</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">area</span> <span class="o">=</span> <span class="n">glz</span><span class="o">.</span><span class="n">area_from_segment</span><span class="p">(</span><span class="n">seg</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_to_ceiling_height</span><span class="p">)</span>
+                    <span class="n">glz_areas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">area</span><span class="p">)</span>
+        <span class="c1"># compute the skylight area</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">is_top_exposed</span><span class="p">:</span>
+            <span class="n">sky_par</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">skylight_parameters</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sky_par</span><span class="p">,</span> <span class="n">DetailedSkylights</span><span class="p">):</span>
+                <span class="n">sky_par</span> <span class="o">=</span> <span class="n">sky_par</span><span class="o">.</span><span class="n">remove_windows</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">sky_par</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">glz_areas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sky_par</span><span class="o">.</span><span class="n">area_from_face</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_geometry</span><span class="p">))</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">glz_areas</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">door_area</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">door_area_abs_difference</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number for the difference between host and comparison door area.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">door_area_difference</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">door_area_percent_change</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a number between 0 an 100 for the percent change between door areas.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">door_area_abs_difference</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">door_area</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Room2DComparisonProperties.set_from_room_2d">
+<a class="viewcode-back" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.set_from_room_2d">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_from_room_2d</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">comparison_room_2d</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set the attributes of this Room2DComparisonProperties using a Room2D.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            comparison_room_2d: A Room2D to which the host Room2D is being compared.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span> <span class="o">=</span> <span class="n">comparison_room_2d</span><span class="o">.</span><span class="n">floor_geometry</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">comparison_windows</span> <span class="o">=</span> <span class="n">comparison_room_2d</span><span class="o">.</span><span class="n">window_parameters</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span> <span class="o">=</span> <span class="n">comparison_room_2d</span><span class="o">.</span><span class="n">skylight_parameters</span></div>
+
+
+<div class="viewcode-block" id="Room2DComparisonProperties.reset">
+<a class="viewcode-back" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.reset">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Reset the comparison attributes using the host Room2D.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_geometry</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">comparison_windows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">window_parameters</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">skylight_parameters</span></div>
+
+
+<div class="viewcode-block" id="Room2DComparisonProperties.restore">
+<a class="viewcode-back" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.restore">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">restore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a Room2D with host properties and geometry restored from the comparison.</span>
+
+<span class="sd">        The restored Room2D returned from this method will have all boundary</span>
+<span class="sd">        conditions reset to outdoors and all shading parameters removed. Otherwise,</span>
+<span class="sd">        all properties of the returned Room2D will match the host and all geometry</span>
+<span class="sd">        will match the comparison.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># grab the relevant properties from the host Room2D</span>
+        <span class="n">room_2d_class</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="vm">__class__</span>
+        <span class="n">identifier</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">identifier</span>
+        <span class="n">floor_geo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span> \
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_geometry</span>
+        <span class="n">ftc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_to_ceiling_height</span>
+        <span class="n">w_par</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_windows</span> \
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_windows</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">window_parameters</span>
+        <span class="n">ground</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">is_ground_contact</span>
+        <span class="n">exposed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">is_top_exposed</span>
+        <span class="n">new_room</span> <span class="o">=</span> <span class="n">room_2d_class</span><span class="p">(</span><span class="n">identifier</span><span class="p">,</span> <span class="n">floor_geo</span><span class="p">,</span> <span class="n">ftc</span><span class="p">,</span> <span class="n">window_parameters</span><span class="o">=</span><span class="n">w_par</span><span class="p">,</span>
+                                 <span class="n">is_ground_contact</span><span class="o">=</span><span class="n">ground</span><span class="p">,</span> <span class="n">is_top_exposed</span><span class="o">=</span><span class="n">exposed</span><span class="p">)</span>
+
+        <span class="c1"># assign any additional properties to the new room</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">new_room</span><span class="o">.</span><span class="n">_skylight_parameters</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span>
+        <span class="n">new_room</span><span class="o">.</span><span class="n">_has_floor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">_has_floor</span>
+        <span class="n">new_room</span><span class="o">.</span><span class="n">_has_ceiling</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">_has_ceiling</span>
+        <span class="n">new_room</span><span class="o">.</span><span class="n">_ceiling_plenum_depth</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">_ceiling_plenum_depth</span>
+        <span class="n">new_room</span><span class="o">.</span><span class="n">_floor_plenum_depth</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">_floor_plenum_depth</span>
+        <span class="n">new_room</span><span class="o">.</span><span class="n">_user_data</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">user_data</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> \
+            <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">user_data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">new_room</span><span class="o">.</span><span class="n">_parent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">_parent</span>
+        <span class="n">new_room</span><span class="o">.</span><span class="n">_abridged_properties</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">_abridged_properties</span>
+        <span class="n">new_room</span><span class="o">.</span><span class="n">_properties</span><span class="o">.</span><span class="n">_duplicate_extension_attr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">_properties</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">new_room</span></div>
+
+
+<div class="viewcode-block" id="Room2DComparisonProperties.move">
+<a class="viewcode-back" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.move">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">moving_vec</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Move these properties along a vector.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            moving_vec: A ladybug_geometry Vector3D with the direction and distance</span>
+<span class="sd">                to move the room.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span> <span class="o">=</span> \
+                <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">moving_vec</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span><span class="p">,</span> <span class="n">DetailedSkylights</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">moving_vec</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Room2DComparisonProperties.rotate_xy">
+<a class="viewcode-back" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.rotate_xy">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">rotate_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">origin</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Rotate these properties counterclockwise in the XY plane by a certain angle.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            angle: An angle in degrees.</span>
+<span class="sd">            origin: A ladybug_geometry Point3D for the origin around which the</span>
+<span class="sd">                object will be rotated.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span> <span class="o">=</span> \
+                <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span><span class="o">.</span><span class="n">rotate_xy</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">angle</span><span class="p">),</span> <span class="n">origin</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span><span class="p">,</span> <span class="n">DetailedSkylights</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">origin</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Room2DComparisonProperties.scale">
+<a class="viewcode-back" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.scale">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Scale these properties by a factor from an origin point.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            factor: A number representing how much the object should be scaled.</span>
+<span class="sd">            origin: A ladybug_geometry Point3D representing the origin from which</span>
+<span class="sd">                to scale. If None, it will be scaled from the World origin (0, 0, 0).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># scale the floor geometry</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span> <span class="o">=</span> \
+                <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">factor</span><span class="p">,</span> <span class="n">origin</span><span class="p">)</span>
+        <span class="c1"># scale the window parameters</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_windows</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">scaled_windows</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">win_par</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_windows</span><span class="p">:</span>
+                <span class="n">s_wp</span> <span class="o">=</span> <span class="n">win_par</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">factor</span><span class="p">)</span> <span class="k">if</span> <span class="n">win_par</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
+                <span class="n">scaled_windows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s_wp</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">comparison_windows</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">scaled_windows</span><span class="p">)</span>
+        <span class="c1"># scale the skylight parameters</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">factor</span><span class="p">,</span> <span class="n">origin</span><span class="p">)</span> \
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span><span class="p">,</span> <span class="n">DetailedSkylights</span><span class="p">)</span> <span class="k">else</span> \
+                <span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">factor</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Room2DComparisonProperties.from_dict">
+<a class="viewcode-back" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.from_dict">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">host</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create Room2DComparisonProperties from a dictionary.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            data: A dictionary representation of Room2DComparisonProperties in the</span>
+<span class="sd">                format below.</span>
+<span class="sd">            host: A Room2D object that hosts these properties.</span>
+
+<span class="sd">        .. code-block:: python</span>
+
+<span class="sd">            {</span>
+<span class="sd">            &quot;type&quot;: &#39;Room2DComparisonProperties&#39;,</span>
+<span class="sd">            &quot;modifier_set&quot;: {},  # A ModifierSet dictionary</span>
+<span class="sd">            &quot;grid_parameters&quot;: []  # A list of GridParameter dictionaries</span>
+<span class="sd">            }</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Room2DComparisonProperties&#39;</span><span class="p">,</span> \
+            <span class="s1">&#39;Expected Room2DComparisonProperties. Got </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">])</span>
+        <span class="n">new_prop</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+        <span class="n">new_prop</span><span class="o">.</span><span class="n">apply_properties_from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">new_prop</span></div>
+
+
+<div class="viewcode-block" id="Room2DComparisonProperties.apply_properties_from_dict">
+<a class="viewcode-back" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.apply_properties_from_dict">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">apply_properties_from_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Apply properties from a Room2DComparisonProperties dictionary.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            data: A Room2DComparisonProperties dict (typically coming from a Model).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># re-assemble the floor_geometry</span>
+        <span class="k">if</span> <span class="s1">&#39;floor_boundary&#39;</span> <span class="ow">in</span> <span class="n">data</span> <span class="ow">and</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;floor_boundary&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">fh</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">floor_height</span>
+            <span class="n">bound_verts</span> <span class="o">=</span> <span class="p">[</span><span class="n">Point3D</span><span class="p">(</span><span class="n">pt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pt</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">fh</span><span class="p">)</span> <span class="k">for</span> <span class="n">pt</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;floor_boundary&#39;</span><span class="p">]]</span>
+            <span class="k">if</span> <span class="s1">&#39;floor_holes&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                <span class="n">hole_verts</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Point3D</span><span class="p">(</span><span class="n">pt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pt</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">fh</span><span class="p">)</span> <span class="k">for</span> <span class="n">pt</span> <span class="ow">in</span> <span class="n">hole</span><span class="p">]</span>
+                              <span class="k">for</span> <span class="n">hole</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;floor_holes&#39;</span><span class="p">]]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">hole_verts</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span> <span class="o">=</span> <span class="n">Face3D</span><span class="p">(</span><span class="n">bound_verts</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">hole_verts</span><span class="p">)</span>
+
+        <span class="c1"># re-assemble window parameters</span>
+        <span class="k">if</span> <span class="s1">&#39;window_parameters&#39;</span> <span class="ow">in</span> <span class="n">data</span> <span class="ow">and</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;window_parameters&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">glz_pars</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">glz_dict</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;window_parameters&#39;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">glz_dict</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">glz_class</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">glzpar</span><span class="p">,</span> <span class="n">glz_dict</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">])</span>
+                    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                            <span class="s1">&#39;Window parameter &quot;</span><span class="si">{}</span><span class="s1">&quot; is not recognized.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                                <span class="n">glz_dict</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]))</span>
+                    <span class="n">glz_pars</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">glz_class</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">glz_dict</span><span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">glz_pars</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">comparison_windows</span> <span class="o">=</span> <span class="n">glz_pars</span>
+
+        <span class="c1"># assign any skylight parameters if they are specified</span>
+        <span class="k">if</span> <span class="s1">&#39;skylight_parameters&#39;</span> <span class="ow">in</span> <span class="n">data</span> <span class="ow">and</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;skylight_parameters&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">sky_class</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">skypar</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;skylight_parameters&#39;</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">])</span>
+            <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s1">&#39;Skylight parameter &quot;</span><span class="si">{}</span><span class="s1">&quot; is not recognized.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;skylight_parameters&#39;</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">]))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span> <span class="o">=</span> <span class="n">sky_class</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;skylight_parameters&#39;</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="Room2DComparisonProperties.to_dict">
+<a class="viewcode-back" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.to_dict">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">abridged</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return Room2D comparison properties as a dictionary.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            abridged: Boolean for whether the full dictionary of the Room2D should</span>
+<span class="sd">                be written (False) or just the identifier of the the individual</span>
+<span class="sd">                properties (True). Default: False.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;comparison&#39;</span><span class="p">:</span> <span class="p">{}}</span>
+        <span class="n">base</span><span class="p">[</span><span class="s1">&#39;comparison&#39;</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Room2DComparisonProperties&#39;</span>
+
+        <span class="c1"># write the floor geometry into the dictionary</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">base</span><span class="p">[</span><span class="s1">&#39;comparison&#39;</span><span class="p">][</span><span class="s1">&#39;floor_boundary&#39;</span><span class="p">]</span> <span class="o">=</span> \
+                <span class="p">[(</span><span class="n">p</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span><span class="o">.</span><span class="n">boundary</span><span class="p">]</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span><span class="o">.</span><span class="n">has_holes</span><span class="p">:</span>
+                <span class="n">base</span><span class="p">[</span><span class="s1">&#39;comparison&#39;</span><span class="p">][</span><span class="s1">&#39;floor_holes&#39;</span><span class="p">]</span> <span class="o">=</span> \
+                    <span class="p">[[(</span><span class="n">p</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">hole</span><span class="p">]</span>
+                     <span class="k">for</span> <span class="n">hole</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_floor_geometry</span><span class="o">.</span><span class="n">holes</span><span class="p">]</span>
+
+        <span class="c1"># write the window parameters into the dictionary</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_windows</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">base</span><span class="p">[</span><span class="s1">&#39;comparison&#39;</span><span class="p">][</span><span class="s1">&#39;window_parameters&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">glz</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_windows</span><span class="p">:</span>
+                <span class="n">val</span> <span class="o">=</span> <span class="n">glz</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span> <span class="k">if</span> <span class="n">glz</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
+                <span class="n">base</span><span class="p">[</span><span class="s1">&#39;comparison&#39;</span><span class="p">][</span><span class="s1">&#39;window_parameters&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+
+        <span class="c1"># write the skylights into the dict</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">base</span><span class="p">[</span><span class="s1">&#39;comparison&#39;</span><span class="p">][</span><span class="s1">&#39;skylight_parameters&#39;</span><span class="p">]</span> <span class="o">=</span> \
+                <span class="bp">self</span><span class="o">.</span><span class="n">comparison_skylight</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">base</span></div>
+
+
+<div class="viewcode-block" id="Room2DComparisonProperties.duplicate">
+<a class="viewcode-back" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.duplicate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">duplicate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_host</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a copy of this object.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            new_host: A new Room2D object that hosts these properties.</span>
+<span class="sd">                If None, the properties will be duplicated with the same host.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">_host</span> <span class="o">=</span> <span class="n">new_host</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_host</span>
+        <span class="n">new_r</span> <span class="o">=</span> <span class="n">Room2DComparisonProperties</span><span class="p">(</span><span class="n">_host</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_comparison_floor_geometry</span><span class="p">)</span>
+        <span class="n">new_r</span><span class="o">.</span><span class="n">_comparison_windows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_comparison_windows</span>
+        <span class="n">new_r</span><span class="o">.</span><span class="n">_comparison_skylight</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_comparison_skylight</span>
+        <span class="k">return</span> <span class="n">new_r</span></div>
+
+
+<div class="viewcode-block" id="Room2DComparisonProperties.ToString">
+<a class="viewcode-back" href="../../../dragonfly_comparison.properties.room2d.html#dragonfly_comparison.properties.room2d.Room2DComparisonProperties.ToString">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ToString</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;Room2D Comparison Properties: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">identifier</span><span class="p">)</span></div>
+
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2026, Ladybug Tools.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 8.0.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

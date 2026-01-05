@@ -1,0 +1,18 @@
+dragonfly\_comparison package
+=============================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   dragonfly_comparison.properties
+
+Module contents
+---------------
+
+.. automodule:: dragonfly_comparison
+   :members:
+   :undoc-members:
+   :show-inheritance:
