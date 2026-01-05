@@ -171,7 +171,7 @@ class Room2DComparisonProperties(object):
         try:
             return (self.floor_area_abs_difference / self.floor_area) * 100
         except ZeroDivisionError:
-            return 0
+            return float('inf')
 
     @property
     def wall_area(self):
@@ -207,7 +207,7 @@ class Room2DComparisonProperties(object):
         try:
             return (self.wall_area_abs_difference / self.wall_area) * 100
         except ZeroDivisionError:
-            return 0
+            return float('inf')
 
     @property
     def wall_sub_face_area(self):
@@ -246,7 +246,7 @@ class Room2DComparisonProperties(object):
         try:
             return (self.wall_sub_face_area_abs_difference / self.wall_sub_face_area) * 100
         except ZeroDivisionError:
-            return 0
+            return float('inf')
 
     @property
     def roof_sub_face_area(self):
@@ -282,7 +282,7 @@ class Room2DComparisonProperties(object):
         try:
             return (self.roof_sub_face_area_abs_difference / self.roof_sub_face_area) * 100
         except ZeroDivisionError:
-            return 0
+            return float('inf')
 
     @property
     def sub_face_area(self):
@@ -314,7 +314,7 @@ class Room2DComparisonProperties(object):
         try:
             return (self.sub_face_area_abs_difference / self.sub_face_area) * 100
         except ZeroDivisionError:
-            return 0
+            return float('inf')
 
     @property
     def window_area(self):
@@ -389,7 +389,7 @@ class Room2DComparisonProperties(object):
         try:
             return (self.window_area_abs_difference / self.window_area) * 100
         except ZeroDivisionError:
-            return 0
+            return float('inf')
 
     @property
     def door_area(self):
@@ -465,7 +465,7 @@ class Room2DComparisonProperties(object):
         try:
             return (self.door_area_abs_difference / self.door_area) * 100
         except ZeroDivisionError:
-            return 0
+            return float('inf')
 
     def set_from_room_2d(self, comparison_room_2d):
         """Set the attributes of this Room2DComparisonProperties using a Room2D.
